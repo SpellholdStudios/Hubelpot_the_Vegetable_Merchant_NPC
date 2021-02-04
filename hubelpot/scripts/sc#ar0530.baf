@@ -1,6 +1,6 @@
 /*IF
   Global("SC#HubItems","AR0530",0)
-  GlobalGT("SC#HubPlot","GLOBALS",3)
+  GlobalGT("SC#HubPlot","GLOBAL",3)
 THEN
   RESPONSE #100
     SetGlobal("SC#HubItems","AR0530",1)
