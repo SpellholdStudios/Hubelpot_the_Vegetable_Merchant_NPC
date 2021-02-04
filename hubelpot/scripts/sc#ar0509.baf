@@ -3,7 +3,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("SC#HubPlot","GLOBAL",7)
-    AddJournalEntry(@6,QUEST_DONE)
+    AddJournalEntry(@2006,QUEST_DONE)
 END
 
 IF
