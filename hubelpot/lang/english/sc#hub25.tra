@@ -1,0 +1,14 @@
+@0    = ~Where... you? So mah duty is not yet fulfilled? Very well. A deal is a deal, an’ Ah’ll not try te back out now. So, ye got anything te eat around here?~
+@1    = ~So, ye want me back now do you? Well enough then. Seems Ah’ve traveled a long way to pay back a thousand gold. Still, it has been interestin’.~ [sc#hub46]
+@2    = ~Come, join me Hubelpot. There is work to be done.~
+@3    = ~No Hubelpot, I don’t need you. Relax in the pocket plane for a while.~
+@4    = ~Ah canna believe ye dragged me here te sit on me arse. Ah guess Ah’ll see if there’s anything here te cook.~
+@5    = ~So, ye want me back now do you? Well enough then. Seems Ah’ve traveled a long way to pay back a thousand gold. Still, it has been interestin’.~
+@6    = ~So ye want me te go then?~ [sc#hub52]
+@7    = ~No Hubelpot, stay with me. I need someone to do the cooking around here.~
+@8    = ~I think it’s time for you to go. Off with you now, vegetable man.~
+@9    = ~Fair enough, Ah’m goin’. If ye need me, ye know how te find me.~
+@10   = ~Eh? Yer back! Hae ye need of mah talents, <CHARNAME>?~
+@11   = ~Yes my friend. Come, let us travel together~
+@12   = ~No Hubelpot, just stopping by for some rations.~
+@13   = ~So now ye may become a God? Don’t be a fool <CHARNAME>. Ye’ll be at the bottom of the pile, hated and at war forever. Get out while ye can. That’s mah advice, fer what it’s worth.~

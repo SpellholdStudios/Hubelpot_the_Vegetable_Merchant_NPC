@@ -1,0 +1,156 @@
+@0    = ~Hubelpot Thistledown, the Vegetable Merchant NPC mod~
+
+@10   = ~Optional kit, the Village Druid.~
+@69   = ~You do not appear to have Hubelpot installed. To install this component, please install Hubelpot first.~
+
+@20   = ~Alternate Portrait by Enkida~
+
+// Hubelpot NPC
+// ------------
+@1001 = ~Hubelpot~
+@1002 = ~Bloody 'ell! We're gonna dye!~ [sc#hub01]
+@1003 = ~Now this is fine. Chauntea's blessin on us all, eh?~ [sc#hub02]
+@1004 = ~Now this be nay right, nay right at all.~ [sc#hub03]
+@1005 = ~Ah won' hiv wi this, not fer a minute more!~ [sc#hub04]
+@1006 = ~Yer all mad! Right, 'at's it then!~ [sc#hub05]
+@1007 = ~Wha'? Weel, ah'll lead fer now laddie, if'n 'at's wha' ye wan'.~ [sc#hub06]
+@1008 = ~Ah' need teh rest. Maheidsburstin.~ [sc#hub07]
+@1009 = ~(singing) Said he to poor Ham, who was hugging his loins, "Ah, the hedgehog, my boy, can't be buggered at all."~ [sc#hub08]
+@1010 = ~Right! Who wants some!~ [sc#hub09]
+@1011 = ~Ah'll do ye fer 'at!~ [sc#hub10]
+@1012 = ~Ah guess we canna talk aboot this?~ [sc#hub11]
+@1013 = ~Look behinya!~ [sc#hub12]
+@1014 = ~Ahm gonna roast yer figgin!~ [sc#hub13]
+
+@1016 = ~...Oh dear~ [sc#hub15]
+@1017 = ~Ah'm nay feelin' so well. Kin ye gimme sumthin fer it?~ [sc#hub16]
+@1018 = ~Now this be fine. Canna we search fer some onions?~ [sc#hub17]
+@1019 = ~There's boun' teh be a pub roun' here somewhere.~ [sc#hub18]
+@1020 = ~Wha' am ah doin' here? Ahm gonna git killed!~ [sc#hub19]
+@1021 = ~Ah think it's near time fer a meal.~ [sc#hub20]
+@1022 = ~Ah canna see a thing. Let's get to a nice, warm pub.~ [sc#hub21]
+@1023 = ~Aye?~ [sc#hub22]
+@1024 = ~Whatchyeneedthen?~ [sc#hub23]
+@1025 = ~Ye be wantin' somethin'?~ [sc#hub24]
+@1026 = ~Ah heard you tha' first time.~ [sc#hub25]
+@1027 = ~Ye needs me then?~ [sc#hub26]
+@1028 = ~The mighy adventurer wants somethin?~ [sc#hub27]
+@1029 = ~'Ere ah go then.~ [sc#hub28]
+@1030 = ~Ah'm movin' as fas' as ah can.~ [sc#hub29]
+@1031 = ~Aye.~ [sc#hub30]
+@1032 = ~Aye, ah'm doin' it.~ [sc#hub31]
+@1033 = ~Ah'm doin' it now.~ [sc#hub32]
+@1034 = ~Ah'm nae a machine here!~ [sc#hub33]
+@1035 = ~Ah wish ah'd never left the shop.~ [sc#hub34]
+@1036 = ~"The sheep is a classic, as well you may find"~ [sc#hub35]
+@1037 = ~"A Wizards Staff has a knob on the end"~ [sc#hub36]
+@1038 = ~Hah! Ah'm nae old!~ [sc#hub37]
+@1039 = ~Bugger! Stan' still you!~ [sc#hub38]
+@1040 = ~Ah canna hurt this smegger!~ [sc#hub39]
+@1041 = ~Ah canna hol' nae more.~ [sc#hub40]
+
+@1043 = ~Smeg! Ah lost me spell!~ [sc#hub41]
+@1044 = ~When asked about his life, Hubelpot seems surprised by your interest. Cheerfully enough he relates tales of his life in the apparently cut-throat world of vegetable marketing, and regales you with stories of his wife Morag and their son, Hamlish, an apprentice baker. When pressed he speaks with a certain longing about his childhood in the tiny village of Dunny on the Woad, and his father, the Village Druid. “The missus an’ me,” Hubelpot tells you, “We used te take the vegetables and such inte town fer market. She always loved the Promenade, an’ so one day she talked old Enge inte leasin’ us space. Thought we could be gentlefolk merchants.” Frowning slightly, Hubelpot insists that it’s time he got back to arranging your supplies.~
+
+// Creatures
+// ---------
+@1046 = ~Hamlish Thistledown~
+@1047 = ~Sweet Fanny Adams~
+@1048 = ~Brinsley Blake~
+@1049 = ~Gnome Teamster~
+
+// Epilogue
+// --------
+@1050 = ~The fate of <CHARNAME> and the end of the Bhaalspawn saga were often in Hubelpot’s mind in his later years. Hubelpot owed <CHARNAME> much, for had their paths not crossed he would have remained a simple vegetable merchant. <CHARNAME> led Hubelpot to fully embrace the role of Druid that Chauntea had in mind for him, and in so embracing his role he was able to do great good for the farmers and small folk of Amn. With the support of his comrades, Hubelpot used both the grace of Chauntea and newfound political power to begin healing a land torn by war, resettling veterans and rebuilding farms and towns large and small. All the same, Hubelpot’s soul was troubled, and the battles in which he had taken part were often in his thoughts. Hubelpot and his beloved Morag supported and guided each-other in this new life, and their many sons and daughters rarely imagined the adventures that had seen their father rise from the role of vegetable seller to owner of the largest tavern in Amn and full member of the Council of Six. When asked about <CHARNAME>, Hubelpot would smile, and ask the questioner if he or she would like something to eat.~
+
+// Items
+// -----
+@1051 = ~Horn~
+@1052 = ~Horn of Herne the Hunted~
+@1053 = ~This is a small horn.  Horns are typically made of bone or metal and can produce a large variety of sounds.~
+@1054 = ~Hubelpot's grandfather is credited with the creation of this item, According to family legend, Verdant Thistledown was wandering through the woods when he came upon a vicious pack of gibberlings. He knew that his minor druidic magics could not save him, and seeing his doom at hand cried out to his god. "Herne," he called, "I beg you, send the fiercest of your warriors to defend me!"
+
+Herne the Hunted, lord of all small creatures destined to be caught and eaten, replied. Verdant's signal horn sounded, and the miracle occurred!
+
+During the ensuing rain of bunnies Verne was able to escape. Since that day, this unremarkable looking signal horn has retained its power.
+
+Effect:
+When sounded, summons a large number of bunnies and grants Sanctuary to the user. Equip in Quick Item slot.
+
+Not Usable By:
+ Wizard Slayer~
+
+@1055 = ~Dracandros' Note~
+@1056 = ~K, I have the scroll, though I can’t imagine what use S could possibly get out of it. We’ve made a reasonable profit off of the last few raids, but it is becoming increasingly difficult to take slaves who won’t be missed. Also, we’ve heard rumors of a group of mercenaries who may prove troublesome.
+Your obedient serpent,
+-D~
+
+@1057 = ~Merchant Guild's Gold~
+@1058 = ~These gold coins are imprinted with the mark of the Small Merchant's Guild. This is almost certainly the gold that Hubelpot gave to Blake.~
+
+@1059 = ~Junior Staff~
+@1060 = ~Staff Sergeant~
+@1061 = ~Tonker~
+@1062 = ~Senior Staff~
+@1063 = ~Big Tonker~
+@1064 = ~Scroll~
+@1065 = ~Sapient Staff~
+@1066 = ~Sapient Staff
+
+Level: 1
+Range: Self
+Duration: 1 Turn
+Casting Time: 1
+Area of Effect: One staff, stick, or cylindrical object made of Wood
+
+It is often said that one cannot judge a wizard by the length of his staff, though wizards well practiced in the use of this spell would disagree. Indeed, in magical academies where Sapient Staff is in common use, it is expected for young mages to debate over who among them has the power to call forth the longest staff of all. The power and purpose of this spell is to call forth an extension of the wizard’s will, to animate an ordinary quarterstaff and send it into battle on behalf of its master. While this spell is tremendously useful, it also carries dangers. Sending forth his staff drains the wizard of a certain portion of his vital essence, his knowledge and his will; indeed, the bigger the staff, the more debilitating its use becomes. Young wizards who rely too heavily upon the power of the staff may find advancement in the ranks of magic more difficult to achieve, while the most experienced wizards may find careers destroyed by imprudent deployment of their massive staves.
+There are many reports of the staves of wizards great and small surviving the deaths of their masters, wandering the halls of ancient ruins and forgotten temples. Stories are often told of young apprentices tormented for years or guided towards greatness by a particularly potent staff. A wild staff is properly referred to as a “Tonker”.
+The power of the staff increases with the skill of its creator as follows:
+
+Level 1-4 : Junior Staff.
+Level 5-9 : Staff Sergeant.
+Level 10-14 : Tonker.
+Level 15-19 : Senior Staff.
+Level 20+ : Big Tonker.
+
+While all staves are somewhat resistant to magic, they are not invulnerable, and of course every wizard’s staff has a mind of its own.
+
+Ecology of the Free Tonker:
+Once free from its master’s control, the average staff will seek a dry, cool nesting place, preferably near a source of magical energy. Behind the book-cases in a large magical library, the back of a dry closet containing a few magical robes, or the corner of a well equipped magical laboratory would all be ideal. Free staves often act as de-facto guards in the more well-established academies of magic; sometimes difficult to communicate with or control, these free staves are rarely dangerous unless aroused. Generally they will become quite protective of the students who practice magic daily in their presence, and can be trusted to defend them from intruders. However, roughhousing or teasing is very difficult for them to understand. The very best advice one can give to a young apprentice in such an academy is not to play with his Tonker.~
+/* UNUSED = same as @1066
+@1067 = ~Sapient Staff
+Level: 1
+Range: Self
+Duration: 1 Turn
+Casting Time: 1
+Area of Effect: One staff, stick, or cylindrical object made of Wood
+
+It is often said that one cannot judge a wizard by the length of his staff, though wizards well practiced in the use of this spell would disagree. Indeed, in magical academies where Sapient Staff is in common use, it is expected for young mages to debate over who among them has the power to call forth the longest staff of all. The power and purpose of this spell is to call forth an extension of the wizard’s will, to animate an ordinary quarterstaff and send it into battle on behalf of its master. While this spell is tremendously useful, it also carries dangers. Sending forth his staff drains the wizard of a certain portion of his vital essence, his knowledge and his will; indeed, the bigger the staff, the more debilitating its use becomes. Young wizards who rely too heavily upon the power of the staff may find advancement in the ranks of magic more difficult to achieve, while the most experienced wizards may find careers destroyed by imprudent deployment of their massive staves.
+There are many reports of the staves of wizards great and small surviving the deaths of their masters, wandering the halls of ancient ruins and forgotten temples. Stories are often told of young apprentices tormented for years or guided towards greatness by a particularly potent staff. A wild staff is properly referred to as a “Tonker”.
+The power of the staff increases with the skill of its creator as follows:
+
+Level 1-4 = Junior Staff.
+Level 5-9 = Staff Sergeant.
+Level 10-14 = Tonker.
+Level 15-19 = Senior Staff.
+Level 20+ = Big Tonker.
+
+While all staves are somewhat resistant to magic, they are not invulnerable, and of course every wizard’s staff has a mind of its own.
+
+Ecology of the Free Tonker:
+Once free from its master’s control, the average staff will seek a dry, cool nesting place, preferably near a source of magical energy. Behind the book-cases in a large magical library, the back of a dry closet containing a few magical robes, or the corner of a well equipped magical laboratory would all be ideal. Free staves often act as de-facto guards in the more well-established academies of magic; sometimes difficult to communicate with or control, these free staves are rarely dangerous unless aroused. Generally they will become quite protective of the students who practice magic daily in their presence, and can be trusted to defend them from intruders. However, roughhousing or teasing is very difficult for them to understand. The very best advice one can give to a young apprentice in such an academy is not to play with his Tonker.~
+*/
+
+
+@1071 = ~Village Druid~
+@1072 = ~The Village Druid, also known as the Wise Man or Wise Woman, is found in many small rural communities. He or She is skilled in herbal medicine, animal husbandry, midwifery, agriculture, and the many other tasks so vital to the maintenance of an isolated settlement. Additionally, the Village Druid draws magic from the land to assist in these tasks. The Village Druid will often act formally or informally as a judge and records keeper, and as an advisor to the village headman or council.
+
+Advantages:
+May cast Sanctuary as an innate ability once per day. Lasts 1 turn.
+At Level 3 gains the innate ability to cast Remove Paralysis once per day.
+At Level 6 gains the innate ability to cast Poison once per day.
+At Level 9 gains the innate ability to cast Mass Cure once per day.
+At Level 12 gains the innate ability to cast Animal Summoning III once per day.
+
+Disadvantages:
+May not shape-change. May cast one fewer spell per spell level than a standard Druid.~
