@@ -1,0 +1,8 @@
+IF
+  Global("SC#HubExists","AR0707",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#HubExists","AR0707",1)
+    CreateCreature("SC#Hub",[389.383],12)
+END
+

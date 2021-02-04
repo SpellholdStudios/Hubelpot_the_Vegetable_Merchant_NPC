@@ -1,0 +1,11 @@
+/*IF
+  Global("SC#HubItems","AR0530",0)
+  GlobalGT("SC#HubPlot","GLOBALS",3)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#HubItems","AR0530",1)
+    ActionOverride("Chest 1",CreateItem("SC#HuGl",0,0,0))
+    ActionOverride("Chest 1",CreateItem("SC#slno",0,0,0))
+    ActionOverride("Chest 1",CreateItem("tacstaf",0,0,0))
+    Continue()
+END*/

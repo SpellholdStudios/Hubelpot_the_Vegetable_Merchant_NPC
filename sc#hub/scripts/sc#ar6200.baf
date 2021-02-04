@@ -1,0 +1,15 @@
+IF
+    Global("StartEndBios","AR6200",1)
+    InParty("Hubelpot")
+    Global("SC#HubBio","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SC#HubBio","GLOBAL",1)
+        TextScreen("SC#HubBio")
+        SetGlobal("SC#HubBio","GLOBAL",1)
+        SmallWait(1)
+        SetGlobal("SC#HubBio","GLOBAL",1)
+        Continue()
+        SetGlobal("SC#HubBio","GLOBAL",1)
+END
+

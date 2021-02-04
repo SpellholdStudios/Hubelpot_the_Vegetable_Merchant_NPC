@@ -1,0 +1,17 @@
+IF
+  Global("SC#HubPlot","GLOBAL",6)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#HubPlot","GLOBAL",7)
+    AddJournalEntry(@6,QUEST_DONE)
+END
+
+IF
+  Global("SC#HamExists","AR0509",0)
+  InParty("Hubelpot")
+THEN
+  RESPONSE #100
+    SetGlobal("SC#HamExists","AR0509",14)
+    CreateCreature("SC#Ham",[992.305],5)
+END
+

@@ -1,0 +1,35 @@
+IF
+  Global("SC#HubPlot","GLOBAL",1)
+  Global("SC#BlaExists","AR0406",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#BlaExists","AR0406",1)
+    CreateCreature("SC#Bla",[1592.1818],5)
+END
+
+IF
+  Global("SC#HubPlot","GLOBAL",1)
+  Global("SC#GT1Exists","AR0406",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#GT1Exists","AR0406",1)
+    CreateCreature("SC#GT1",[1576.1761],5)
+END
+
+IF
+  Global("SC#HubPlot","GLOBAL",1)
+  Global("SC#GT2Exists","AR0406",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#GT2Exists","AR0406",1)
+    CreateCreature("SC#GT2",[1575.1864],5)
+END
+
+IF
+  Global("SC#HubPlot","GLOBAL",2)
+  Global("SC#FanExists","AR0406",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SC#FanExists","AR0406",1)
+    CreateCreature("SC#Fan",[1274.465],15)
+END

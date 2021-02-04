@@ -1,0 +1,30 @@
+IF
+  Range([PC],20)
+  NumTimesTalkedTo(0)
+  See([PC])
+  Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #100
+   StartDialogueNoSet([PC])
+END
+
+IF
+  InParty(Myself)
+  Global("SC#HubPlot","GLOBAL",2)
+  Global("SC#HubPlotTalk","LOCALS",0)
+THEN
+  RESPONSE #100
+    Wait(1)
+    StartDialogueNoSet(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("SC#HubPlotTalk","LOCALS",1)
+  PartyHasItem("SC#HuGl")
+THEN
+  RESPONSE #100
+    Wait(1)
+    StartDialogueNoSet(Player1)
+END
+

@@ -1,0 +1,701 @@
+BACKUP ~SC#Hub/Backup~
+AUTHOR ~sebastian8987@edu.upplands-bro.se~ //Coder extraordinaire!
+ASK_EVERY_COMPONENT
+ALLOW_MISSING ~Ar0707.bcs~  
+              ~Ar0530.bcs~  
+              ~Ar0509.bcs~
+
+BEGIN ~Hubelpot Thistledown, the Vegetable Merchant NPC-mod~
+
+/////////////////////////////////
+//			       //
+// Creature files for Hubelpot //
+//			       //
+/////////////////////////////////
+
+COPY ~SC#Hub\Creatures\SC#Hub.cre~ ~override\SC#Hub.cre~
+  SAY NAME1 ~Hubelpot~
+  SAY NAME2 ~Hubelpot~
+  SAY MORALE ~Bloody 'ell! We're gonna dye!~ [SC#Hub01]
+  SAY HAPPY ~Now this is fine. Chauntea's blessin on us all, eh?~ [SC#Hub02]
+  SAY UNHAPPY_ANNOYED ~Now this be nay right, nay right at all.~ [SC#Hub03]
+  SAY UNHAPPY_SERIOUS ~Ah won' hiv wi this, not fer a minute more!~ [SC#Hub04]
+  SAY UNHAPPY_BREAKING ~Yer all mad! Right, 'at's it then!~ [SC#Hub05]
+  SAY LEADER ~Wha'? Weel, ah'll lead fer now laddie, if'n 'at's wha' ye wan'.~ [SC#Hub06]
+  SAY TIRED ~Ah' need teh rest. Maheidsburstin.~ [SC#Hub07]
+  SAY BORED ~(singing) Said he to poor Ham, who was hugging his loins, "Ah, the hedgehog, my boy, can't be buggered at all."~ [SC#Hub08]
+  SAY BATTLE_CRY1 ~Right! Who wants some!~ [SC#Hub09]
+  SAY BATTLE_CRY2 ~Ah'll do ye fer 'at!~ [SC#Hub10]
+  SAY BATTLE_CRY3 ~Ah guess we canna talk aboot this?~ [SC#Hub11]
+  SAY BATTLE_CRY4 ~Look behinya!~ [SC#Hub12]
+  SAY BATTLE_CRY5 ~Ahm gonna roast yer figgin!~ [SC#Hub13]
+  SAY DAMAGE ~~ [SC#Hub14]
+  SAY DYING ~...Oh dear~ [SC#Hub15]
+  SAY HURT ~Ah'm nay feelin' so well. Kin ye gimme sumthin fer it?~ [SC#Hub16]
+  SAY AREA_FOREST ~Now this be fine. Canna we search fer some onions?~ [SC#Hub17]
+  SAY AREA_CITY ~There's boun' teh be a pub roun' here somewhere.~ [SC#Hub18]
+  SAY AREA_DUNGEON ~Wha' am ah doin' here? Ahm gonna git killed!~ [SC#Hub19]
+  SAY AREA_DAY ~Ah think it's near time fer a meal.~ [SC#Hub20]
+  SAY AREA_NIGHT ~Ah canna see a thing. Let's get to a nice, warm pub.~ [SC#Hub21]
+  SAY SELECT_COMMON1 ~Aye?~ [SC#Hub22]
+  SAY SELECT_COMMON2 ~Whatchyeneedthen?~ [SC#Hub23]
+  SAY SELECT_COMMON3 ~Ye be wantin' somethin'?~ [SC#Hub24]
+  SAY SELECT_COMMON4 ~Ah heard you tha' first time.~ [SC#Hub25]
+  SAY SELECT_COMMON5 ~Ye needs me then?~ [SC#Hub26]
+  SAY SELECT_COMMON6 ~The mighy adventurer wants somethin?~ [SC#Hub27]
+  SAY SELECT_ACTION1 ~'Ere ah go then.~ [SC#Hub28]
+  SAY SELECT_ACTION2 ~Ah'm movin' as fas' as ah can.~ [SC#Hub29]
+  SAY SELECT_ACTION3 ~Aye.~ [SC#Hub30]
+  SAY SELECT_ACTION4 ~Aye, ah'm doin' it.~ [SC#Hub31]
+  SAY SELECT_ACTION5 ~Ah'm doin' it now.~ [SC#Hub32]
+  SAY SELECT_ACTION6 ~Ah'm nae a machine here!~ [SC#Hub33]
+  SAY SELECT_ACTION7 ~Ah wish ah'd never left the shop.~ [SC#Hub34]
+  SAY SELECT_RARE1 ~"The sheep is a classic, as well you may find"~ [SC#Hub35]
+  SAY SELECT_RARE2 ~"A Wizards Staff has a knob on the end"~ [SC#Hub36]
+  SAY CRITICAL_HIT ~Hah! Ah'm nae old!~ [SC#Hub37]
+  SAY CRITICAL_MISS ~Bugger! Stan' still you!~ [SC#Hub38]
+  SAY TARGET_IMMUNE ~Ah canna hurt this smegger!~ [SC#Hub39]
+  SAY INVENTORY_FULL ~Ah canna hol' nae more.~ [SC#Hub40]
+  SAY PICKED_POCKET ~~
+  SAY HIDDEN_IN_SHADOWS ~~
+  SAY SPELL_DISRUPTED ~Smeg! Ah lost me spell!~ [SC#Hub41]
+  SAY SET_A_TRAP ~~
+  SAY BIO ~When asked about his life, Hubelpot seems surprised by your interest. Cheerfully enough he relates tales of his life in the apparently cut-throat world of vegetable marketing, and regales you with stories of his wife Morag and their son, Hamlish, an apprentice baker. When pressed he speaks with a certain longing about his childhood in the tiny village of Dunny on the Woad, and his father, the Village Druid. “The missus an’ me,” Hubelpot tells you, “We used te take the vegetables and such inte town fer market. She always loved the Promenade, an’ so one day she talked old Enge inte leasin’ us space. Thought we could be gentlefolk merchants.” Frowning slightly, Hubelpot insists that it’s time he got back to arranging your supplies.~
+
+COPY ~SC#Hub\Creatures\SC#Hub25.cre~ ~override\SC#Hub25.cre~
+  SAY NAME1 ~Hubelpot~
+  SAY NAME2 ~Hubelpot~
+  SAY MORALE ~Bloody 'ell! We're gonna dye!~ [SC#Hub01]
+  SAY HAPPY ~Now this is fine. Chauntea's blessin on us all, eh?~ [SC#Hub02]
+  SAY UNHAPPY_ANNOYED ~Now this be nay right, nay right at all.~ [SC#Hub03]
+  SAY UNHAPPY_SERIOUS ~Ah won' hiv wi this, not fer a minute more!~ [SC#Hub04]
+  SAY UNHAPPY_BREAKING ~Yer all mad! Right, 'at's it then!~ [SC#Hub05]
+  SAY LEADER ~Wha'? Weel, ah'll lead fer now laddie, if'n 'at's wha' ye wan'.~ [SC#Hub06]
+  SAY TIRED ~Ah' need teh rest. Maheidsburstin.~ [SC#Hub07]
+  SAY BORED ~(singing) Said he to poor Ham, who was hugging his loins, "Ah, the hedgehog, my boy, can't be buggered at all."~ [SC#Hub08]
+  SAY BATTLE_CRY1 ~Right! Who wants some!~ [SC#Hub09]
+  SAY BATTLE_CRY2 ~Ah'll do ye fer 'at!~ [SC#Hub10]
+  SAY BATTLE_CRY3 ~Ah guess we canna talk aboot this?~ [SC#Hub11]
+  SAY BATTLE_CRY4 ~Look behinya!~ [SC#Hub12]
+  SAY BATTLE_CRY5 ~Ahm gonna roast yer figgin!~ [SC#Hub13]
+  SAY DAMAGE ~~ [SC#Hub14]
+  SAY DYING ~~ [SC#Hub15]
+  SAY HURT ~Ah'm nay feelin' so well. Kin ye gimme sumthin fer it?~ [SC#Hub16]
+  SAY AREA_FOREST ~Now this be fine. Canna we search fer some onions?~ [SC#Hub17]
+  SAY AREA_CITY ~There's boun' teh be a pub roun' here somewhere.~ [SC#Hub18]
+  SAY AREA_DUNGEON ~Wha' am ah doin' here? Ahm gonna git killed!~ [SC#Hub19]
+  SAY AREA_DAY ~Ah think it's near time fer a meal.~ [SC#Hub20]
+  SAY AREA_NIGHT ~Ah canna see a thing. Let's get to a nice, warm pub.~ [SC#Hub21]
+  SAY SELECT_COMMON1 ~Aye?~ [SC#Hub22]
+  SAY SELECT_COMMON2 ~Whatchyeneedthen?~ [SC#Hub23]
+  SAY SELECT_COMMON3 ~Ye be wantin' somethin'?~ [SC#Hub24]
+  SAY SELECT_COMMON4 ~Ah heard you tha' first time.~ [SC#Hub25]
+  SAY SELECT_COMMON5 ~Ye needs me then?~ [SC#Hub26]
+  SAY SELECT_COMMON6 ~The mighy adventurer wants somethin?~ [SC#Hub27]
+  SAY SELECT_ACTION1 ~'Ere ah go then.~ [SC#Hub28]
+  SAY SELECT_ACTION2 ~Ah'm movin' as fas' as ah can.~ [SC#Hub29]
+  SAY SELECT_ACTION3 ~Aye.~ [SC#Hub30]
+  SAY SELECT_ACTION4 ~Aye, ah'm doin' it.~ [SC#Hub31]
+  SAY SELECT_ACTION5 ~Ah'm doin' it now.~ [SC#Hub32]
+  SAY SELECT_ACTION6 ~Ah'm nae a machine here!~ [SC#Hub33]
+  SAY SELECT_ACTION7 ~Ah wish ah'd never left the shop.~ [SC#Hub34]
+  SAY SELECT_RARE1 ~"The sheep is a classic, as well you may find"~ [SC#Hub35]
+  SAY SELECT_RARE2 ~"A Wizards Staff has a knob on the end"~ [SC#Hub36]
+  SAY CRITICAL_HIT ~Hah! Ah'm nae old!~ [SC#Hub37]
+  SAY CRITICAL_MISS ~Bugger! Stan' still you!~ [SC#Hub38]
+  SAY TARGET_IMMUNE ~Ah canna hurt this smegger!~ [SC#Hub39]
+  SAY INVENTORY_FULL ~Ah canna hol' nae more.~ [SC#Hub40]
+  SAY PICKED_POCKET ~~
+  SAY HIDDEN_IN_SHADOWS ~~
+  SAY SPELL_DISRUPTED ~Smeg! Ah lost me spell!~ [SC#Hub41]
+  SAY SET_A_TRAP ~~
+  SAY BIO ~When asked about his life, Hubelpot seems surprised by your interest. Cheerfully enough he relates tales of his life in the apparently cut-throat world of vegetable marketing, and regales you with stories of his wife Morag and their son, Hamlish, an apprentice baker. When pressed he speaks with a certain longing about his childhood in the tiny village of Dunny on the Woad, and his father, the Village Druid. “The missus an’ me,” Hubelpot tells you, “We used te take the vegetables and such inte town fer market. She always loved the Promenade, an’ so one day she talked old Enge inte leasin’ us space. Thought we could be gentlefolk merchants.” Frowning slightly, Hubelpot insists that it’s time he got back to arranging your supplies.~
+
+COPY ~SC#Hub\Creatures\SC#Ham.cre~ ~override\SC#Ham.cre~
+  SAY NAME1 ~Hamlish Thistledown~
+  SAY NAME2 ~Hamlish Thistledown~
+  
+COPY ~SC#Hub\Creatures\SC#Fan.cre~ ~override\SC#Fan.cre~
+  SAY NAME1 ~Sweet Fanny Adams~
+  SAY NAME2 ~Sweet Fanny Adams~
+
+COPY ~SC#Hub\Creatures\SC#Bla.cre~ ~override\SC#Bla.cre~
+  SAY NAME1 ~Brinsley Blake~
+  SAY NAME2 ~Brinsley Blake~
+
+COPY ~SC#Hub\Creatures\SC#GT1.cre~ ~override\SC#GT1.cre~
+  SAY NAME1 ~Gnome Teamster~
+  SAY NAME2 ~Gnome Teamster~
+
+COPY ~SC#Hub\Creatures\SC#GT2.cre~ ~override\SC#GT2.cre~
+  SAY NAME1 ~Gnome Teamster~
+  SAY NAME2 ~Gnome Teamster~
+
+COPY ~SC#Hub\Creatures\DEMMAG.cre~ ~override\DEMMAG.cre~
+
+///////////
+//       //
+// Audio //
+//       //
+///////////
+
+COPY ~SC#Hub\Audio2~ ~override~
+
+COPY ~SC#Hub\Setup-HubAudioInstall.bat~ ~Setup-HubAudioInstall.bat~
+
+//////////////
+//	    //
+// Graphics //
+//	    //
+//////////////
+
+COPY ~SC#Hub\Portraits\SC#HubL.bmp~ ~override\SC#HubL.bmp~
+COPY ~SC#Hub\Portraits\SC#HubS.bmp~ ~override\SC#HubS.bmp~
+COPY ~SC#Hub\Portraits\SC#HubM.bmp~ ~override\SC#HubM.bmp~
+
+
+COPY ~SC#Hub\Graphics~ ~override~
+
+/////////////////
+//	       //
+// .2da fixing //
+//	       //
+/////////////////
+
+APPEND ~pdialog.2da~
+  ~Hubelpot      SC#HubP           SC#HubJ          SC#HubD~
+  UNLESS ~Hubelpot~
+  UNLESS ~25POST~
+
+APPEND ~pdialog.2da~
+  ~Hubelpot      SC#HubP           SC#HubJ          SC#HubD       SC#Hub25P          SC#Hub25J             SC#Hub25D             SC#Hub25~
+  UNLESS ~Hubelpot~
+  IF ~25POST~
+
+APPEND ~interdia.2da~
+  ~Hubelpot     BSC#Hub~
+  UNLESS ~Hubelpot~
+  UNLESS ~25FILE~
+
+APPEND ~interdia.2da~
+  ~Hubelpot     BSC#Hub      BSC#Hub25~
+  UNLESS ~Hubelpot~
+  IF ~25FILE~
+
+
+///////////////
+//	     //
+// Epilogues //
+//	     //
+///////////////
+
+COPY ~SC#Hub\Epilogues\SC#HubBio.2da~ ~override\SC#HubBio.2da~
+  REPLACE ~99999~ ~The fate of <CHARNAME> and the end of the Bhaalspawn saga were often in Hubelpot’s mind in his later years. Hubelpot owed <CHARNAME> much, for had their paths not crossed he would have remained a simple vegetable merchant. <CHARNAME> led Hubelpot to fully embrace the role of Druid that Chauntea had in mind for him, and in so embracing his role he was able to do great good for the farmers and small folk of Amn. With the support of his comrades, Hubelpot used both the grace of Chauntea and newfound political power to begin healing a land torn by war, resettling veterans and rebuilding farms and towns large and small. All the same, Hubelpot’s soul was troubled, and the battles in which he had taken part were often in his thoughts. Hubelpot and his beloved Morag supported and guided each-other in this new life, and their many sons and daughters rarely imagined the adventures that had seen their father rise from the role of vegetable seller to owner of the largest tavern in Amn and full member of the Council of Six. When asked about <CHARNAME>, Hubelpot would smile, and ask the questioner if he or she would like something to eat.~
+
+EXTEND_TOP ~ar6200.bcs~ ~SC#Hub\Scripts\SC#AR6200.baf~
+
+
+////////////////////////
+//		      //
+// Items for Hubelpot //
+//		      //
+////////////////////////
+
+//Horn of Herne the Hunted
+
+COPY ~SC#Hub\Items\TACHORN2.ITM~ ~override\TACHORN2.ITM~
+  SAY NAME1 ~Horn~
+  SAY NAME2 ~Horn of Herne the Hunted~
+  SAY UNIDENTIFIED_DESC ~This is a small horn.  Horns are typically made of bone or metal and can produce a large variety of sounds.~
+  SAY DESC ~Hubelpot's grandfather is creditted with the creation of this item, According to familly legend, Verdant Thistledown was wandering through the woods when he came upon a vicious pack of gibberlings. He knew that his minor druidic magics could not save him, and seeing his doom at hand cried out to his god. "Herne," he called, "I beg you, send the fiercest of your warriors to defend me!"
+
+Herne the Hunted, lord of all small creatures destined to be caught and eaten, replied. Verdant's signal horn sounded, and the miracle occurred!
+
+Durring the ensuing rain of bunnies Verne was able to escape. Since that day, this unremarkable looking signal horn has retained its power.
+
+Effect:
+When sounded, summons a large number of bunnies and grants Sanctuary to the user. Equip in Quick Item slot.
+
+Not Usable By:
+ Wizard Slayer~
+
+//Dracadros' Note
+
+COPY ~SC#Hub\Items\SC#SLNO.ITM~ ~override\SC#SLNO.ITM~
+  SAY NAME1 ~Dracandros' Note~
+  SAY NAME2 ~Dracandros' Note~
+  SAY UNIDENTIFIED_DESC ~K, I have the scroll, though I can’t imagine what use S could possibly get out of it. We’ve made a reasonable profit off of the last few raids, but it is becoming increasingly difficult to take slaves who won’t be missed. Also, we’ve heard rumors of a group of mercenaries who may prove troublesome.
+Your obedient serpent,
+-D~
+  SAY DESC ~K, I have the scroll, though I can’t imagine what use S could possibly get out of it. We’ve made a reasonable profit off of the last few raids, but it is becoming increasingly difficult to take slaves who won’t be missed. Also, we’ve heard rumors of a group of mercenaries who may prove troublesome.
+Your obedient serpent,
+-D~
+
+//Merchant Guild's Gold
+
+COPY ~SC#Hub\Items\SC#HuGl.ITM~ ~override\SC#HuGl.ITM~
+  SAY NAME1 ~Merchant Guild's Gold~
+  SAY NAME2 ~Merchant Guild's Gold~
+  SAY UNIDENTIFIED_DESC ~These gold coins are imprinted with the mark of the Small Merchant's Guild. This is almost certainly the gold that Hubelpot gave to Blake.~
+  SAY DESC ~These gold coins are imprinted with the mark of the Small Merchant's Guild. This is almost certainly the gold that Hubelpot gave to Blake.~
+
+//TACSTAF
+
+// Cre Files
+COPY ~SC#Hub\Items\Tacstaf\cre\Tacstaf1.cre~ ~override\Tacstaf1.cre~
+  SAY NAME1 ~Junior Staff~
+  SAY NAME2 ~Junior Staff~
+
+COPY ~SC#Hub\Items\Tacstaf\cre\Tacstaf2.cre~ ~override\Tacstaf2.cre~
+  SAY NAME1 ~Staff Sergeant~
+  SAY NAME2 ~Staff Sergeant~
+
+COPY ~SC#Hub\Items\Tacstaf\cre\Tacstaf3.cre~ ~override\Tacstaf3.cre~
+  SAY NAME1 ~Tonker~
+  SAY NAME2 ~Tonker~
+
+COPY ~SC#Hub\Items\Tacstaf\cre\Tacstaf4.cre~ ~override\Tacstaf4.cre~
+  SAY NAME1 ~Senior Staff~
+  SAY NAME2 ~Senior Staff~
+
+COPY ~SC#Hub\Items\Tacstaf\cre\Tacstaf5.cre~ ~override\Tacstaf5.cre~
+  SAY NAME1 ~Big Tonker~
+  SAY NAME2 ~Big Tonker~
+
+// Item Files
+COPY ~SC#Hub\Items\Tacstaf\itm\tacstaf.itm~ ~override\tacstaf.itm~
+    SAY NAME1 ~Scroll~
+    SAY NAME2 ~Sapient Staff~ 
+    SAY DESC ~Sapient Staff
+  Level: 1
+  Range: Self 
+  Duration: 1 Turn
+  Casting Time: 1
+  Area of Effect: One Staff, Stick, or Cylindrical Object Made Of Wood
+  
+  Description: 
+  It is often said that one cannot judge a wizard by the length of his staff, though wizards well practiced in the use of this spell would disagree. Indeed, in magical academies where Sapient Staff is in common use, it is expected for young mages to debate over who among them has the power to call forth the longest staff of all. The power and purpose of this spell is to call forth an extension of the wizard’s will, to animate an ordinary quarterstaff and send it into battle on behalf of its master. While this spell is tremendously useful, it also carries dangers. Sending forth his staff drains the wizard of a certain portion of his vital essence, his knowledge and his will; indeed, the bigger the staff, the more debilitating its use becomes. Young wizards who rely too heavily upon the power of the staff may find advancement in the ranks of magic more difficult to achieve, while the most experienced wizards may find careers destroyed by imprudent deployment of their massive staves.
+There are many reports of the staves of wizards great and small surviving the deaths of their masters, wandering the halls of ancient ruins and forgotten temples. Stories are often told of young apprentices tormented for years or guided towards greatness by a particularly potent staff. A wild staff is properly referred to as a “Tonker”.
+The power of the staff increases with the skill of its creator as follows;
+
+Level 1-4 = Junior Staff. 
+Level 5-9 = Staff Sergeant.
+Level 10-14 = Tonker. 
+Level 15-19 = Senior Staff. 
+Level 20+ = Big Tonker. 
+
+While all staves are somewhat resistant to magic, they are not invulnerable, and of course every wizard’s staff has a mind of its own. 
+
+Ecology of the Free Tonker:
+
+Once free from its master’s control, the average staff will seek a dry, cool nesting place, preferably near a source of magical energy. Behind the book-cases in a large magical library, the back of a dry closet containing a few magical robes, or the corner of a well equipped magical laboratory would all be ideal. Free staves often act as de-facto guards in the more well-established academies of magic; sometimes difficult to communicate with or control, these free staves are rarely dangerous unless aroused. Generally they will become quite protective of the students who practice magic daily in their presence, and can be trusted to defend them from intruders. However, roughhousing or teasing is very difficult for them to understand. The very best advice one can give to a young apprentice in such an academy is not to play with his Tonker.~
+
+// Spell Files
+COPY ~SC#Hub\Items\Tacstaf\spl\tacstaf.spl~ ~override\tacstaf.spl~
+    SAY NAME1 ~Sapient Staff~
+    SAY UNIDENTIFIED_DESC ~Sapient Staff
+  Level: 1
+  Range: Self 
+  Duration: 1 Turn 
+  Casting Time: 1
+  Area of Effect: One Staff, Stick, or Cylindrical Object Made Of Wood
+  
+  Description: 
+  It is often said that one cannot judge a wizard by the length of his staff, though wizards well practiced in the use of this spell would disagree. Indeed, in magical academies where Sapient Staff is in common use, it is expected for young mages to debate over who among them has the power to call forth the longest staff of all. The power and purpose of this spell is to call forth an extension of the wizard’s will, to animate an ordinary quarterstaff and send it into battle on behalf of its master. While this spell is tremendously useful, it also carries dangers. Sending forth his staff drains the wizard of a certain portion of his vital essence, his knowledge and his will; indeed, the bigger the staff, the more debilitating its use becomes. Young wizards who rely too heavily upon the power of the staff may find advancement in the ranks of magic more difficult to achieve, while the most experienced wizards may find careers destroyed by imprudent deployment of their massive staves.
+There are many reports of the staves of wizards great and small surviving the deaths of their masters, wandering the halls of ancient ruins and forgotten temples. Stories are often told of young apprentices tormented for years or guided towards greatness by a particularly potent staff. A wild staff is properly referred to as a “Tonker”.
+The power of the staff increases with the skill of its creator as follows;
+
+Level 1-4 = Junior Staff. 
+Level 5-9 = Staff Sergeant.
+Level 10-14 = Tonker. 
+Level 15-19 = Senior Staff. 
+Level 20+ = Big Tonker. 
+
+While all staves are somewhat resistant to magic, they are not invulnerable, and of course every wizard’s staff has a mind of its own. 
+
+Ecology of the Free Tonker:
+
+Once free from its master’s control, the average staff will seek a dry, cool nesting place, preferably near a source of magical energy. Behind the book-cases in a large magical library, the back of a dry closet containing a few magical robes, or the corner of a well equipped magical laboratory would all be ideal. Free staves often act as de-facto guards in the more well-established academies of magic; sometimes difficult to communicate with or control, these free staves are rarely dangerous unless aroused. Generally they will become quite protective of the students who practice magic daily in their presence, and can be trusted to defend them from intruders. However, roughhousing or teasing is very difficult for them to understand. The very best advice one can give to a young apprentice in such an academy is not to play with his Tonker.~
+
+
+//////////////////////////
+//		        //
+// Scripts for Hubelpot //
+//		        //
+//////////////////////////
+
+COMPILE ~SC#Hub\Scripts\SC#Hub.baf~
+  USING ~~
+
+COMPILE ~SC#Hub\Scripts\SC#Hub25.baf~
+  USING ~~
+
+COMPILE ~SC#Hub\Scripts\SC#HubX.baf~
+  USING ~~
+COMPILE ~SC#Hub\Scripts\SC#AR0509.baf~
+  USING ~SC#Hub\Dialogue\SC#Quest.tra~
+
+EXTEND_BOTTOM ~Ar0406.bcs~ ~SC#Hub\Scripts\SC#AR0406.baf~
+
+EXTEND_BOTTOM ~Ar0500.bcs~ ~SC#Hub\Scripts\SC#AR0500.baf~
+
+COPY_EXISTING ~AR0509.are~ ~override~
+  WRITE_ASCII 0x94 ~AR0509~
+EXTEND_BOTTOM ~Ar0509.bcs~ ~override\SC#AR0509.bcs~
+
+COPY_EXISTING ~AR0530.are~ ~override~
+  WRITE_ASCII 0x94 ~AR0530~
+EXTEND_BOTTOM ~Ar0530.bcs~ ~SC#Hub\Scripts\SC#AR0530.baf~
+
+COPY_EXISTING ~AR0707.are~ ~override~
+  WRITE_ASCII 0x94 ~AR0707~
+EXTEND_BOTTOM ~Ar0707.bcs~ ~SC#Hub\Scripts\SC#AR0707.baf~
+
+////////////////////////////
+//			  //
+// Dialogues for Hubelpot //
+//			  //
+////////////////////////////
+
+COMPILE ~SC#Hub\Dialogue\SC#Hub.d~
+  USING ~~
+
+COMPILE ~SC#Hub\Dialogue\BSC#Hub.d~
+  USING ~~
+
+COMPILE ~SC#Hub\Dialogue\SC#HubQuest.d~
+  USING ~SC#Hub\Dialogue\SC#Quest.tra~
+
+//ToB!!!!
+COMPILE ~SC#Hub\Dialogue\SC#FatespiritTD.d~
+  USING ~~
+
+COMPILE ~SC#Hub\Dialogue\SC#Hub25.d~
+  USING ~~
+
+COMPILE ~SC#Hub\Dialogue\BSC#Hub25.d~
+  USING ~~
+
+//////////
+//      //
+// Exit //
+//      //
+//////////
+
+AT_INTERACTIVE_EXIT ~Setup-HubAudioInstall.bat~
+AT_UNINSTALL ~Setup-HubAudioUninstall.bat~
+//AT_INTERACTIVE_EXIT ~VIEW SC#Hub\README-Hubelpot.txt~
+//AudioInstall takes care of this...
+
+///////////////////////
+//                   //
+// Village Druid-kit //
+//                   //
+///////////////////////
+
+
+BEGIN ~Optional kit 1 of 2, the Village Druid.~
+REQUIRE_FILE ~override\SC#Hub.cre~ ~You do not appear to have Hubelpot installed. To install this component, please install Hubelpot first.~
+FORBID_FILE ~override/SC#VFar.2da~ ~You have already installed the Vegetable Farmer-kit. If you wish to install this kit instead, please uninstall that kit first.~
+
+//Fatespirit-dlg.
+/*COMPILE ~SC#Hub\dialogue\SC#FatespiritVDrd.d~
+  USING ~~*/
+
+//Adding kit.
+// internal name of the kit
+ADD_KIT ~SC#VDrd~
+// appended to CLASWEAP.2da
+ ~SC#VDrd                 1           0           1           1           0           0           0           1~
+// appended column-wise to WEAPPROF.2da
+ ~SC#VDrd  0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+// appended to ABCLASRQ.2da
+ ~SC#VDrd                 0       0       0       0       12      13~
+// appended to ABCLSMOD.2da
+ ~SC#VDrd                 0       0       0       0       0       0~
+// appended to ABDCDSRQ.2da
+ ~SC#VDrd                 0       0       0       0       17      17~
+// appended to ABDCSCRQ.2da
+ ~SC#VDrd                 0       0       0       0       15      15~
+// appended to ALIGNMNT.2da
+ ~SC#VDrd                 0       0       0       0       1       0       0       0       0~
+// appended to DUALCLAS.2da
+ ~SC#VDrd                 0       0       0       0       0       0~
+// path to your CLAB-style 2da file
+ ~SC#Hub/Kits/SC#VDrd.2da~
+// PC races and classes allowed to use this kit, from KITTABLE.2da
+ ~~
+// usability flags, added to the end of the KITLIST.2da entry
+ ~0x08000000	11~
+// HLA table to use; see LUABBR.2da
+ ~Dr2~
+// list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+  ~LEAT20 * HELM19 BAG27 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM11 SW1H27 STAF08~
+// Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
+ SAY ~Village Druid~
+ SAY ~Village Druid~
+ SAY ~The Village Druid, also known as the Wise Man or Wise Woman, is found in many small rural communities. He or She is skilled in herbal medicine, animal husbandry, midwifery, agriculture, and the many other tasks so vital to the maintenance of an isolated settlement. Additionally, the Village Druid draws magic from the land to assist in these tasks. The Village Druid will often act formally or informally as a judge and records keeper, and as an advisor to the village headman or council.
+
+Advantages:
+May cast Sanctuary as an innate ability once per day. Lasts 1 turn.
+At Level 3 gains the innate ability to cast Remove Paralysis once per day.
+At Level 6 gains the innate ability to cast Poison once per day.
+At Level 9 gains the innate ability to cast Mass Cure once per day.
+At Level 12 gains the innate ability to cast Animal Summoning III once per day.
+
+Disadvantages:
+May not shape-change. May cast one fewer spell per spell level than a standard Druid.~
+
+//Fixing the innate abilities to innate abilities. :wacko:
+COPY_EXISTING ~SPPR109.spl~ ~override/SC#vd01.spl~
+              ~SPPR308.spl~ ~override/SC#vd02.spl~
+              ~SPPR411.spl~ ~override/SC#vd03.spl~
+              ~SPPR514.spl~ ~override/SC#vd04.spl~
+              ~SPPR602.spl~ ~override/SC#vd05.spl~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+//Updating Hubelpot.
+COPY_EXISTING ~SC#Hub.cre~ ~override~
+ WRITE_SHORT 0x244 0 // doesn't change
+ WRITE_BYTE  0x246 ~%SC#VDrd%~ // the internal name of your kit, surrounded by %
+ WRITE_BYTE  0x247 0x40 // doesn't change
+
+ACTION_IF FILE_EXISTS ~data/25dialog.bif~ 
+ THEN BEGIN
+ COPY_EXISTING ~SC#Hub25.cre~ ~override~ // ToB only
+   WRITE_SHORT 0x244 0 // doesn't change
+   WRITE_BYTE  0x246 ~%SC#VDrd%~ // the internal name of your kit, surrounded by %
+   WRITE_BYTE  0x247 0x40 // doesn't change
+ END
+
+
+//////////////////////////
+//                      //
+// Vegetable Farmer-kit //
+//                      //
+//////////////////////////
+
+/*BEGIN ~Optional kit 2 of 2, the Vegetable Farmer.~
+REQUIRE_FILE ~override\SC#Hub.cre~ ~You do not appear to have Hubelpot installed. To install this component, please install Hubelpot first.~
+FORBID_FILE ~override/SC#VDrd.2da~ ~You have already installed the Village Druid-kit. If you wish to install this kit instead, please uninstall that kit first.~
+
+//Fatespirit-dlg.
+//COMPILE ~SC#Hub\dialogue\SC#FatespiritVFar.d~
+//  USING ~~
+
+//The vegetables.
+COPY ~SC#Hub\Items\SC#PEP.ITM~ ~override\SC#PEP.ITM~
+  SAY NAME1 ~Pepper~
+  SAY NAME2 ~Pepper~
+  SAY UNIDENTIFIED_DESC ~If you eat this pepper, you will be able to breathe fire for 1D8 damage.~
+  SAY DESC ~If you eat this pepper, you will be able to breathe fire for 1D8 damage.~
+
+COPY ~SC#Hub\Items\SC#CAR.ITM~ ~override\SC#CAR.ITM~
+  SAY NAME1 ~Carrot~
+  SAY NAME2 ~Carrot~
+  SAY UNIDENTIFIED_DESC ~This carrot can either be eaten for 15 HP of healing, or be used to summon white rabbits that will give the caster a minute of sanctuary.~
+  SAY DESC ~This carrot can either be eaten for 15 HP of healing, or be used to summon two white rabbits.~
+
+COPY ~SC#Hub\Items\SC#TOM.ITM~ ~override\SC#TOM.ITM~
+  SAY NAME1 ~Tomato~
+  SAY NAME2 ~Tomato~
+  SAY UNIDENTIFIED_DESC ~If you eat this tomato, you will be healed for 15 HP. You can also use it as a weapon, dealing 1D4 crushing damage on hit.~
+  SAY DESC ~If you eat this tomato, you will be healed for 15 HP. You can also use it as a weapon, dealing 1D4 crushing damage on hit.~
+
+COPY ~SC#Hub\Items\SC#POT.ITM~ ~override\SC#POT.ITM~
+  SAY NAME1 ~Potato~
+  SAY NAME2 ~Potato~
+  SAY UNIDENTIFIED_DESC ~If you eat this potatp, you will be healed 30 HP.~
+  SAY DESC ~If you eat this potato, you will be healed 30 HP.~
+
+  
+COPY ~SC#Hub\Items\SC#GAR.ITM~ ~override\SC#GAR.ITM~
+  SAY NAME1 ~Garlic~
+  SAY NAME2 ~Garlic~
+  SAY UNIDENTIFIED_DESC ~If you eat this garlic, you will have protection against vampires and immunity to level drain for 1 minute. A charisma penalty will also occur; -3 in charisma for 10 minutes.~
+  SAY DESC ~If you eat this garlic, you will have protection against vampires and immunity to level drain for 1 minute. A charisma penalty will also occur; -3 in charisma for 10 minutes.~
+  
+COPY ~SC#Hub\Items\SC#BEAN.ITM~ ~override\SC#BEAN.ITM~
+  SAY NAME1 ~Beans~
+  SAY NAME2 ~Beans~
+  SAY UNIDENTIFIED_DESC ~These beans can either be eaten, and if you do, you will be able to cast the spell stinking cloud two times. You can also use the beans to cast on the floor, which will result in a grease-effect.~
+  SAY DESC ~These beans can either be eaten, and if you do, you will be able to cast the spell stinking cloud two times. You can also use the beans to cast on the floor, which will result in a grease-effect.~
+
+//The spells that creates the vegetables...
+COPY ~SC#Hub\Spells\SC#PEP.SPL~ ~override\SC#PEP.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Pepper~
+  SAY UNIDENTIFIED_DESC ~This spell creates a pepper.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+COPY ~SC#Hub\Spells\SC#PEP2.SPL~ ~override\SC#PEP2.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Pepper~
+  SAY UNIDENTIFIED_DESC ~This spell creates a pepper.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+COPY ~SC#Hub\Spells\SC#CAR.SPL~ ~override\SC#CAR.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Carrot~
+  SAY UNIDENTIFIED_DESC ~This spell creates a carrot.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+COPY ~SC#Hub\Spells\SC#TOM.SPL~ ~override\SC#TOM.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Tomato~
+  SAY UNIDENTIFIED_DESC ~This spell creates ten tomatoes.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+COPY ~SC#Hub\Spells\SC#POT.SPL~ ~override\SC#POT.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Potato~
+  SAY UNIDENTIFIED_DESC ~This spell creates a potato.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+COPY ~SC#Hub\Spells\SC#GAR.SPL~ ~override\SC#GAR.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Garlic~
+  SAY UNIDENTIFIED_DESC ~This spell creates a garlic.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+COPY ~SC#Hub\Spells\SC#BEAN.SPL~ ~override\SC#BEAN.SPL~
+  WRITE_SHORT 0x1C 4 // sets spell type to innate (4)
+  WRITE_LONG 0x34 1
+  READ_LONG  0x64 "offset_abil"
+  READ_SHORT  0x68 "num_abil"
+  READ_ASCII ("%offset_abil%" + 0x04) "bam" // reads the bam filename from ability
+  WRITE_EVALUATED_ASCII 0x3A "%bam%" // writes the bam filename from abilities to spell icon
+  SAY NAME1 ~Create Beans~
+  SAY UNIDENTIFIED_DESC ~This spell creates beans.~
+  WHILE (0 < "%num_abil%")
+    BEGIN
+      WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 // changes ability icon location to innate (4)
+      SET "num_abil" = ("%num_abil%" - 1)
+    END
+
+//Adding kit.
+// internal name of the kit
+ADD_KIT ~SC#VFar~
+// appended to CLASWEAP.2da
+ ~SC#VFar                 1           0           1           1           0           0           0           1~
+// appended column-wise to WEAPPROF.2da
+ ~SC#VFar  0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+// appended to ABCLASRQ.2da
+ ~SC#VFar                 0       0       0       0       12      13~
+// appended to ABCLSMOD.2da
+ ~SC#VFar                 0       0       0       0       0       0~
+// appended to ABDCDSRQ.2da
+ ~SC#VFar                 0       0       0       0       17      17~
+// appended to ABDCSCRQ.2da
+ ~SC#VFar                 0       0       0       0       15      15~
+// appended to ALIGNMNT.2da
+ ~SC#VFar                 0       0       0       0       1       0       0       0       0~
+// appended to DUALCLAS.2da
+ ~SC#VFar                 0       0       0       0       0       0~
+// path to your CLAB-style 2da file
+ ~SC#Hub/Kits/SC#VFar.2da~
+// PC races and classes allowed to use this kit, from KITTABLE.2da
+ ~~
+// usability flags, added to the end of the KITLIST.2da entry
+ ~0x08000000	11~
+// HLA table to use; see LUABBR.2da
+ ~Dr2~
+// list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+ ~LEAT20 * HELM19 BAG27 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM11 SW1H27 STAF08~
+// Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
+ SAY ~Vegetable Farmer~
+ SAY ~Vegetable Farmer~
+ SAY ~This druid is specialized in agriculture and selling vegetables. While he is not so much intrested in the wilderness as other druids, his prime concern is his vegetables.
+
+Advantages:
+Can create different vegetables which all have their special powers, or sold to merchants for a good price:
+Carrots - can be used to summon rabbits, like the horn or eaten for healing
+Tomatoes - can be used to be thrown on people for 1D2 damage + stun + blindness for two rounds
+Peas - can be thrown on the floor for entangle-effect, people will slip on it unless save vs. wands, or being able to cast the spell Stinking Cloud two times, if eaten
+Peppers - if eaten, you'll be able to breathe fire twice for 1D8 damage for two rounds, unless save vs. breath weapons
+Garlic - protection from vampires, if eaten
+Potatoes - heals twice as good as other vegetables
+
+Can reduce prices in shopping from merchants, due to his surpreme haggeling-skills.
+
+Disadvantages:
+May not shapeshift~
+
+//Updating Hubelpot.
+COPY_EXISTING ~SC#Hub.cre~ ~override~
+ WRITE_SHORT 0x244 0 // doesn't change
+ WRITE_BYTE  0x246 ~%SC#VFar%~ // the internal name of your kit, surrounded by %
+ WRITE_BYTE  0x247 0x40 // doesn't change
+
+ACTION_IF FILE_EXISTS ~data/25dialog.bif~
+ THEN BEGIN
+ COPY_EXISTING ~SC#Hub25.cre~ ~override~ // ToB only
+   WRITE_SHORT 0x244 0 // doesn't change
+   WRITE_BYTE  0x246 ~%SC#VFar%~ // the internal name of your kit, surrounded by %
+   WRITE_BYTE  0x247 0x40 // doesn't change
+ END */
+

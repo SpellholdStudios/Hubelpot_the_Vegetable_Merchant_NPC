@@ -1,0 +1,20 @@
+////////////////////////
+//                    //
+// SC#Hub25 script... //
+//                    //
+////////////////////////
+
+IF
+	Global("SC#HubSummoned","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+		Wait(1)
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END

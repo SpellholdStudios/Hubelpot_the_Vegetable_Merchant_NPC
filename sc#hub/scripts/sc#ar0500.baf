@@ -1,0 +1,10 @@
+IF
+  Global("SC#AegisExists","AR0500",0)
+  Global("MurdersSolved","GLOBAL",1)
+  !Dead("Inspect")
+THEN
+  RESPONSE #100
+    SetGlobal("SC#AegisExists","AR0500",1)
+    CreateCreature("Inspect",[4257.385],7)
+END
+
