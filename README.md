@@ -31,7 +31,7 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 ## 
 
 <div align="center">
-<a href="#intro">Overview</a> &#x2B25; <a href="#compat">Compatibility</a> &#x2B25; <a href="#installation">Installation</a> &#x2B25; <a href="#components">Components</a> &#x2B25; <a href="#credits">Credits</a> &#x2B25; <a href="#versions">Versions History</a></br>
+<a href="#intro">Overview</a> &#x2B25; <a href="#compat">Compatibility</a> &#x2B25; <a href="#installation">Installation</a> &#x2B25; <a href="#components">Components</a> &#x2B25; <a href="#credits">Credits</a> &#x2B25; <a href="#versions">Version History</a></br>
 </div>
 
 <hr>
@@ -41,7 +41,7 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 <img style="float: left;" src="hubelpot/readme/images/sc_hubm.jpg"> This mod adds the Vegetable Merchant Hubelpot Thistledown to the game. He is a joinable druid-NPC. You can find Hubelpot in Enge's fruit and vegetable shop in the Promenade (he’s leasing the space).<br>
 Hubelpot is by default a Totemic Druid. The village wise man who can call spirits to aid his people is well established in folkloric tradition, and fits Hubelpot well enough. He also has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value. Both of the new kits are NPC only, and both are fairly well balanced compared to other BG2 kits.<br>
 Hubelpot features around 30 banters, none of them breaking the 4th wall, and none of them featuring the word "turnip". He interacts with every Bioware NPC except Sarevok. In ToB he’s still fairly quiet, only speaking up when called, with Volo and at the end of ToB; he does have an epilogue. If there is an expansion, more ToB dialog will be added.<br>
-From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.
+From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.<br>
 
 <details><summary><ins>Original note from the authors</ins></summary>
 <br><p>
@@ -169,7 +169,7 @@ Component blublu description.
 
 ## 
 
-**Authors:** <Robert Dorf (aka <a href="http://www.shsforums.net/user/2433-bobtokyo/">BobTokyo</a>) and Sebastian Cpnrad (aka <a href="http://www.shsforums.net/user/2832-sconrad/">SConrad</a>)
+**Authors:** Robert Dorf (aka <a href="http://www.shsforums.net/user/2433-bobtokyo/">BobTokyo</a>) and Sebastian Cpnrad (aka <a href="http://www.shsforums.net/user/2832-sconrad/">SConrad</a>)
 
 ## 
 
@@ -247,12 +247,11 @@ Component blublu description.
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
   - *sc#hub.d*: included SCConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
   - Lollorian's assorted CRE fixes.
-  - Luca Piol's compatibility with Sellsword.
 - *sc#hubquest.d*: included Austin fix to resolve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
 - *sc#hub25.d*: included Austin fix to resolve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
-- Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>.
-- Included BWP Fixpack Luca Piol's typo fix for ruad.d: replaced wrong misc6s item (Chunk of Illithium Alloy) with misc6w (Wooden Stake) to create Wooden Stake (u#blun03.itm).
-- Provided a Hubelpot portrait for EE games.
+- Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. And AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
+- No longer overwrites demmag.cre (Dracandros), but patches it with `ADD_CRE_ITEM` WeiDU function.
+- Provided Hubelpot portraits for EE games, and fixed classic medium portrait.
 - Appended *tooltip.2da* whenever relevant.
 - Second component (#10): removed `AT_INTERACTIVE_EXIT` command and added a require main component process, otherwise mod will crash the game if first component is not installed.
 - Renamed "*titles*" and "*setup*" .tra files to more accurate "*setup*" and "*items*" .tra files.
@@ -270,8 +269,6 @@ Component blublu description.
 
 - Added Dynamic Install Syntax (`After` and `Before` keywords) in *hubelpot.ini* metadata file to support AL|EN's "Project Infinity".
 transferred texts to tra files, 
-- changed the way of installing sound files to LAF HANDLE_AUDIO command, 
-- added different sizes of portraits for different versions of the game
 - Added optional component to install an <a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">alternative portrait from Enkida</a>.
 - removed the second (unused) kit from the TP2 file
 - fixed this bug: http://www.shsforums.net/topic/34068-problems-installing/#entry515226 - in checks "Kit(Hubelpot...BLAHBLAHBLAH" there were no quotes, now corrected to Kit("Hubelpot"...BLAHBLAHBLAH" (Later this code snippet was changed, see the explanations in the following posts)
