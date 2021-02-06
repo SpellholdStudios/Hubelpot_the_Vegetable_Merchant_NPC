@@ -12,7 +12,7 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 </div><br>
 
 
-**Authors:** Robert Dorf (aka BobTokyo) and Sebastian Cpnrad (SConrad)  
+**Authors:** Robert Dorf (aka BobTokyo) and Sebastian Conrad (SConrad)  
 **Mod Website:** <a href="http://www.spellholdstudios.net/ie/hubelpot">Spellhold Studios</a>  
 **Mod Forum:** <a href="http://www.shsforums.net/forum/156-hubelpot/">Hubelpot the Vegetable Merchant</a><br>
 
@@ -153,9 +153,11 @@ The installer includes the following components. The number of each is the compo
 
 ## 
 
-#### [20] Component blublu
+#### [10] Alternate Portrait by Enkida
 
-Component blublu description.
+&#10173; This optional component replaces Hubelpot portraits with Endika alternate one<br>.
+
+<img style="float: center;" src="hubelpot/readme/images/sc_hubm2.jpg">
 
 <div align="right"><a href="#top">Back to top</a></div>
 
@@ -169,7 +171,7 @@ Component blublu description.
 
 ## 
 
-**Authors:** Robert Dorf (aka <a href="http://www.shsforums.net/user/2433-bobtokyo/">BobTokyo</a>) and Sebastian Cpnrad (aka <a href="http://www.shsforums.net/user/2832-sconrad/">SConrad</a>)
+**Authors:** Robert Dorf (aka <a href="http://www.shsforums.net/user/2433-bobtokyo/">BobTokyo</a>) and Sebastian Conrad (aka <a href="http://www.shsforums.net/user/2832-sconrad/">SConrad</a>)
 
 ## 
 
@@ -182,7 +184,10 @@ Component blublu description.
 - Voice Actors: NotMrT.
 - Bug Hunting: SConrad, BobTokyo, NotMrT, Shed.
 - Special Thanks to Terry Pratchett, a god among authors, and Heather Wood, multi-talented folk songstress, for inspiration. For several versions of The Hedgehog Song and much more, please go <a href="http://www.ie.lspace.org/">here</a>.
-- he team leaders also wish to credit everyone not mentioned who've contributed with ideas, suggestions, help, response and encouragement. This has meant a lot to us. Hubelpot wouldn't exist if it weren't for you. Thank you!.
+- ...
+- ...
+- a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">Hupelpot alternate portrait</a>: Enkida.
+- The team leaders also wish to credit everyone not mentioned who've contributed with ideas, suggestions, help, response and encouragement. This has meant a lot to us. Hubelpot wouldn't exist if it weren't for you. Thank you!.
 - Everyone else from <a href="http://gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
 - Deprecated links: <a href="http://forums.forgottenwars.net/index.php?showforum=156">Hubelpot's own forum</a> at <a href="http://forums.forgottenwars.net">Forgotten Wars forums</a> and <a href="http://sol-ek-sa.forgottenwars.net">Sol Ek</a> at <a href="http://forums.forgottenwars.net/index.php?showforum=147">FW</a>.
 
@@ -236,29 +241,34 @@ Component blublu description.
 - Added `README` command.
 - Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charset<ins>s</ins>*).
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
-- Added components `DESIGNATED` numbers and "*hubelpot_*" and "*hubelpot_*" `LABELS`.
+- Added components `DESIGNATED` numbers and "*hubelpot_npc_totemic_druid*", "*hubelpot_npc_village_druid*", "*hubelpot_npc_vegetable_farmer*" and "*hubelpot_npc_alternate_portait*" `LABELS`.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Commented code as much as possible.
 - Added native BG2:EE and EET compatibility.
 - Reworked install procedure to use WeiDU's built-in `HANDLE_AUDIO` function.
+- ...
+- Added a brand new optional component to install an <a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">alternate portrait from Enkida</a> (thanks Austin!).
 - Converted inventory BAMs to EE: This feature attempts to modify traditional inventory BAMs so that both the large and small icons are utilized by the EE games. The inventory BAM must have two sequences, the first containing the "large" inventory icon frame and the second containing the "small" inventory icon frame to be processed. Inventory icon BAMs in the bam folder that meet these requirements are patched and saved back to the *override* folder.
 - Included all BWP Fixpack patches:
   - *sc#ar0500.baf*: <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry546504">Lollorian's fix for double creation of Inspector</a>.
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
   - *sc#hub.d*: included SCConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
   - Lollorian's assorted CRE fixes.
-- *sc#hubquest.d*: included Austin fix to resolve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
-- *sc#hub25.d*: included Austin fix to resolve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
-- Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. And AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
-- No longer overwrites demmag.cre (Dracandros), but patches it with `ADD_CRE_ITEM` WeiDU function.
+- *sc#hubquest.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
+- *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
+- Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. Moreover, AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
+- No longer overwrites *demmag.cre* (Dracandros), but patches it with  WeiDU's built-in `ADD_CRE_ITEM` function.
 - Provided Hubelpot portraits for EE games, and fixed classic medium portrait.
 - Appended *tooltip.2da* whenever relevant.
-- Second component (#10): removed `AT_INTERACTIVE_EXIT` command and added a require main component process, otherwise mod will crash the game if first component is not installed.
-- Renamed "*titles*" and "*setup*" .tra files to more accurate "*setup*" and "*items*" .tra files.
-- Updated *items.tra* files for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games. And fixed restriction flags whenever relevant.
-- Updated and renamed readme file to *ruad-readme-english.txt*, then moved it into new "*readme*" folder.
-- Renamed "*sc#hub*" top-folder to "*hubelpot*".
-- Removed unused files.
+- Proofread strrefs (Gwendolyne).
+- Fixed token typos: replaced *<LADYLORD>* with *`<PRO_LADYLORD>`* to fix the bug with incorrect gender reference to `<CHARNAME>` if another NPC started the dialog (Austin).
+- Updated *setup.tra* files for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games..
+- Mod Traified. Feel free to provide me with translations. I will include them as soon as possible..
+- Updated deprecated modding tools links.
+- Re-formated, updated and renamed readme file to *hubelpot-readme-english.html*, then moved it into new "*readme*" folder.
+- Removed useless files and backup folder.
+- Renamed "*sc#hub*" top-folder to "*hubelpot*" and reorganized mod architecture tree: created folders to sort files according to their types.
+- Lower cased files.
 - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Updated OggDec to v1.9.7 and added sox v14.4.1 for Mac.
 - Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
@@ -266,16 +276,27 @@ Component blublu description.
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
 
 ## 
-
+Fixed bam files: fixed frames coordinates and palettes.
 - Added Dynamic Install Syntax (`After` and `Before` keywords) in *hubelpot.ini* metadata file to support AL|EN's "Project Infinity".
 transferred texts to tra files, 
-- Added optional component to install an <a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">alternative portrait from Enkida</a>.
 - removed the second (unused) kit from the TP2 file
 - fixed this bug: http://www.shsforums.net/topic/34068-problems-installing/#entry515226 - in checks "Kit(Hubelpot...BLAHBLAHBLAH" there were no quotes, now corrected to Kit("Hubelpot"...BLAHBLAHBLAH" (Later this code snippet was changed, see the explanations in the following posts)
 - added a single line for the call in the dialogue with the Fate Spirit (because earlier, when dividing the lines into two different ones, the call did not work)
-- <LADYLORD> replaced with <PRO_LADYLORD> to fix the bug with incorrect gender reference to the CHARNAME if another NPC started the dialog
 - updated version (to 1.1) in tp2 and readme file
 
+			<li>Re-enabled the Vegetable Farmer kit (disabled as of version 1.0). &#128521;</li>
+			<li>Made the three available kits subcomponents of the main component.</li>
+			<li>Converted inventory BAMs to EE: This feature attempts to modify traditional inventory BAMs so that both the large and small icons are utilized by the EE games. The inventory BAM must have two sequences, the first containing the "large" inventory icon frame and the second containing the "small" inventory icon frame to be processed. Inventory icon BAMs in the bam folder that meet these requirements are patched and saved back to the override folder.</li>
+		  </ul><br>
+Type: Create inventory item (122)
+Timing mode: Delay/Permanent - 4
+Dispel/Resistance: Not dispel/Bypass resistance (2)
+
+Timing mode: Instant/Permanent until death - 1
+Dispel/Resistance: Natural/Nonmagical (0)
+
+
+## 
 
 ##### Version SC#IM6 &nbsp;(2018)
 
@@ -283,7 +304,7 @@ transferred texts to tra files,
 
 ## 
 
-##### Version 1.0 beta &nbsp;
+##### Version 1.0 beta &nbsp;(April 26, 2007)
 
 - Initial release.
 <div align="right"><a href="#top">Back to top</a></div>
