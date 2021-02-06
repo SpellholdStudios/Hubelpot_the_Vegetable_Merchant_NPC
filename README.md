@@ -45,13 +45,6 @@ From a play value point of view, Hubelpot adds one quest with an unusual reward.
 
 <details><summary><ins>Original note from the authors</ins></summary>
 <br><p>
-Hubelpot started out as a joke, turned into a one day NPC, then a one week NPC, and is now an NPC project. Let this be a lesson to all of you never, ever to tell a joke under any circumstances, ever.<br><br>
-The challenge was to create an NPC free from tainted blood, dark secrets, mental illness, etc, etc. The NPC would not step on CHARNAME's lines, would not be a power-gamer's dream, and would be fun to have in the party. What we came up with was Hubelpot.<br><br>
-We hope you'll like him.<br><br>
-<em>Disclaimer: Hubelpot is not a tool of the devil. Hubelpot is not now nor has he ever been a communist. Hubelpot is not down with his bad self. Hubelpot is not the walrus. He is the vegetable man.</em></p>
-
-<p>
-
 ###### Hubelpot started out as a joke, turned into a one day NPC, then a one week NPC, and is now an NPC project. Let this be a lesson to all of you never, ever to tell a joke under any circumstances, ever.
 ###### The challenge was to create an NPC free from tainted blood, dark secrets, mental illness, etc, etc. The NPC would not step on CHARNAME's lines, would not be a power-gamer's dream, and would be fun to have in the party. What we came up with was Hubelpot.<br><br>
 ###### We hope you'll like him.<br><br>
