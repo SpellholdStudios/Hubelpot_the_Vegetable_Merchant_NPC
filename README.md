@@ -245,19 +245,22 @@ The installer includes the following components. The number of each is the compo
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Commented code as much as possible.
 - Added native BG2:EE and EET compatibility.
-- Reworked install procedure to use WeiDU's built-in `HANDLE_AUDIO` function.
-- ...
+- Rewrote install procedure to use WeiDU's built-in `HANDLE_AUDIO` function.
+- Made the three available kits subcomponents of the main component: Re-enabled the Vegetable Farmer kit (disabled as of version 1.0). :wink:
 - Added a brand new optional component to install an <a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">alternate portrait from Enkida</a> (thanks Austin!).
+- `ADD_KIT` process: added missing lower kit strref.
 - Converted inventory BAMs to EE: This feature attempts to modify traditional inventory BAMs so that both the large and small icons are utilized by the EE games. The inventory BAM must have two sequences, the first containing the "large" inventory icon frame and the second containing the "small" inventory icon frame to be processed. Inventory icon BAMs in the bam folder that meet these requirements are patched and saved back to the *override* folder.
+- Fixed bam files: fixed frames coordinates and palettes.
+- Spell and item abilities: fixed wrong opcode settings when accurate (Timing mode: *Delay/Permanent* replaced with *Instant/Permanent until death*. Dispel/Resistance: *Not dispel/Bypass resistance* replaced with *Natural/Nonmagical*...).
 - Included all BWP Fixpack patches:
   - *sc#ar0500.baf*: <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry546504">Lollorian's fix for double creation of Inspector</a>.
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
-  - *sc#hub.d*: included SCConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
+  - *sc#hub.d*: included SConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
   - Lollorian's assorted CRE fixes.
 - *sc#hubquest.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
 - *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
 - Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. Moreover, AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
-- No longer overwrites *demmag.cre* (Dracandros), but patches it with  WeiDU's built-in `ADD_CRE_ITEM` function.
+- No longer overwrites *demmag.cre* (Dracandros), but patches it with  WeiDU's built-in `ADD_CRE_ITEM` function, and removes AR0530.bcs patch.
 - Provided Hubelpot portraits for EE games, and fixed classic medium portrait.
 - Appended *tooltip.2da* whenever relevant.
 - Proofread strrefs (Gwendolyne).
@@ -276,24 +279,15 @@ The installer includes the following components. The number of each is the compo
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
 
 ## 
-Fixed bam files: fixed frames coordinates and palettes.
-- Added Dynamic Install Syntax (`After` and `Before` keywords) in *hubelpot.ini* metadata file to support AL|EN's "Project Infinity".
-transferred texts to tra files, 
-- removed the second (unused) kit from the TP2 file
+
 - fixed this bug: http://www.shsforums.net/topic/34068-problems-installing/#entry515226 - in checks "Kit(Hubelpot...BLAHBLAHBLAH" there were no quotes, now corrected to Kit("Hubelpot"...BLAHBLAHBLAH" (Later this code snippet was changed, see the explanations in the following posts)
 - added a single line for the call in the dialogue with the Fate Spirit (because earlier, when dividing the lines into two different ones, the call did not work)
-- updated version (to 1.1) in tp2 and readme file
 
-			<li>Re-enabled the Vegetable Farmer kit (disabled as of version 1.0). &#128521;</li>
-			<li>Made the three available kits subcomponents of the main component.</li>
-			<li>Converted inventory BAMs to EE: This feature attempts to modify traditional inventory BAMs so that both the large and small icons are utilized by the EE games. The inventory BAM must have two sequences, the first containing the "large" inventory icon frame and the second containing the "small" inventory icon frame to be processed. Inventory icon BAMs in the bam folder that meet these requirements are patched and saved back to the override folder.</li>
-		  </ul><br>
-Type: Create inventory item (122)
-Timing mode: Delay/Permanent - 4
-Dispel/Resistance: Not dispel/Bypass resistance (2)
-
-Timing mode: Instant/Permanent until death - 1
-Dispel/Resistance: Natural/Nonmagical (0)
++//Updating dlg's.
++COPY_EXISTING ~FATESP.dlg~ ~override~
++  REPLACE_TEXTUALLY ~Bring me Hubelpot, the Totemic Druid.~ ~Bring me Hubelpot, the Village Druid.~
++COPY_EXISTING ~FATESP.dlg~ ~override~
++  REPLACE_TEXTUALLY ~Bring me Hubelpot, the Totemic Druid.~ ~Bring me Hubelpot, the Vegetable Farmer.~
 
 
 ## 
