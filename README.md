@@ -6,7 +6,7 @@
 
 <div align="center"><h1></a>Hubelpot the Vegetable Merchant NPC Mod</h1>
 
-<h3>A mod hosted at Spellhold Studios for Baldur's Gate II:SoA with or without ToB,<br>
+<h3>A mod hosted at Spellhold Studios for Baldur's Gate II:ToB,<br>
 Baldur's Gate Trilogy, BG2:EE and EET<h3>
 
 </div><br>
@@ -79,10 +79,14 @@ Hubelpot is a WeiDU mod, and therefore should be compatible with all WeiDU mods.
 #### Installation Order
 
 >Although it is not required for Hubelpot the Vegetable Merchant to function properly, classical game players are strongly recommended to download and install the latest version of the <a href="https://www.gibberlings3.net/mods/fixes/bg2fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.<br>
+
+- Please install Hubelpot after BG2 Fixpack and EET.
+- Please install Hubelpot before EET_end.
 <div align="right"><a href="#top">Back to top</a></div>
 
 
 <hr>
+
 
 ## <a name="installation" id="installation"></a>Installation
 
@@ -151,8 +155,11 @@ The installer includes the following components. The number of each is the compo
 ## 
 
 #### [0-2] Hubelpot Thistledown, the Vegetable Merchant NPC mod
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[0]** Hubelpot is a Totemic Druid (by default)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[1]** Hubelpot is a Village Druid (Druidic kit)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[2]** Hubelpot is a Vegetable Farmer (Druidic kit)<br><br>
 
-&#10173; Main component description.
+&#10173; This main component adds the Vegetable Merchant Hubelpot Thistledown to the game. He is by default a Totemic Druid, but has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value.
 
 ## 
 
@@ -171,7 +178,7 @@ The installer includes the following components. The number of each is the compo
 
 ## <a name="credits" id="credits"></a>Credits and Acknowledgements
 
-&#9755; For support or questions, please visit the <a href="">mod forum</a>.
+&#9755; For support or questions, please visit the <a href="http://www.shsforums.net/forum/156-hubelpot/">mod forum</a>.
 
 ## 
 
@@ -188,14 +195,13 @@ The installer includes the following components. The number of each is the compo
 - Voice Actors: NotMrT.
 - Bug Hunting: SConrad, BobTokyo, NotMrT, Shed.
 - Special Thanks to Terry Pratchett, a god among authors, and Heather Wood, multi-talented folk songstress, for inspiration. For several versions of The Hedgehog Song and much more, please go <a href="http://www.ie.lspace.org/">here</a>.
-- ...
-- ...
+- Gwendolyne and Austin for updating the mod to v1.1.0.
 - a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">Hupelpot alternate portrait</a>: Enkida.
 - The team leaders also wish to credit everyone not mentioned who've contributed with ideas, suggestions, help, response and encouragement. This has meant a lot to us. Hubelpot wouldn't exist if it weren't for you. Thank you!.
-- Everyone else from <a href="http://gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
+- Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
 - Deprecated links: <a href="http://forums.forgottenwars.net/index.php?showforum=156">Hubelpot's own forum</a> at <a href="http://forums.forgottenwars.net">Forgotten Wars forums</a> and <a href="http://sol-ek-sa.forgottenwars.net">Sol Ek</a> at <a href="http://forums.forgottenwars.net/index.php?showforum=147">FW</a>.
 
-&#9755; If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="">mod forum</a>.</br>
+&#9755; If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/forum/156-hubelpot/">mod forum</a>.</br>
 
 ## 
 
@@ -208,7 +214,7 @@ The installer includes the following components. The number of each is the compo
 - <a href="http://www.gibberlings3.net/tools/dltcep.php">DLTCEP</a>, by Avenger.
 - <a href="http://www.baldursgatemods.com/forums/index.php?action=downloads;sa=view;down=85">CreMaker_v3.1.9</a>.
 - <a href="http://www.baldursgatemods.com/forums/index.php?action=downloads;sa=view;down=68">BAM Workshop</a>, by Glenn Flansburg.
-- a href="http://www.gamani.com/">Sir-Kill's graphic programs: Jasc PaintShopPro 8</a>.
+- Sir-Kill's graphic programs: Jasc PaintShopPro 8.
 - <a href="http://notepad-plus-plus.org/">Notepad++</a>, by the Notepad++ team, Don Ho, and the spellcheck plug-in.
 - <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters</a>, by Argent77.
 - <a href="https://www.filecroco.com/download-context/">ConTEXT Text Editor</a>, by Eden Kirin.
@@ -245,26 +251,25 @@ The installer includes the following components. The number of each is the compo
 - Added `README` command.
 - Added `HANDLE_CHARSETS` function to convert string entries for EE games (to prepare for possible translations).
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
-- Added components `DESIGNATED` numbers and "*hubelpot_npc_totemic_druid*", "*hubelpot_npc_village_druid*", "*hubelpot_npc_vegetable_farmer*" and "*hubelpot_npc_alternate_portait*" `LABELS`.
+- Added components `DESIGNATED` numbers and "*hubelpot_npc_totemic_druid*", "*hubelpot_npc_village_druid*", "*hubelpot_npc_vegetable_farmer*" and "*hubelpot_npc_alternate_portrait*" `LABELS`.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Commented code as much as possible.
 - Added native BG2:EE and EET compatibility.
 - Rewrote install procedure to use WeiDU's built-in `HANDLE_AUDIO` function.
 - Made the three available kits subcomponents of the main component: Re-enabled the Vegetable Farmer kit (disabled as of version 1.0). :wink:
 - Added a brand new optional component to install an <a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">alternate portrait from Enkida</a> (thanks Austin!).
-- `ADD_KIT` process: added missing lower kit strref.
 - Converted inventory BAMs to EE: This feature attempts to modify traditional inventory BAMs so that both the large and small icons are utilized by the EE games. The inventory BAM must have two sequences, the first containing the "large" inventory icon frame and the second containing the "small" inventory icon frame to be processed. Inventory icon BAMs in the bam folder that meet these requirements are patched and saved back to the *override* folder.
 - Fixed bam files: fixed frames coordinates and palettes.
 - Kits:
   - Re-enabled and fixed all optional Druidic kits.
-  - Added missing lower case versions of the kits names.
+  - `ADD_KIT` process: added missing lower kit strref.
   - Spell and item abilities: fixed wrong opcode settings when accurate (Timing mode: *Delay/Permanent* replaced with *Instant/Permanent until death*. Dispel/Resistance: *Not dispel/Bypass resistance* replaced with *Natural/Nonmagical*...).
 - Included all BWP Fixpack patches:
   - *sc#ar0500.baf*: <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry546504">Lollorian's fix for double creation of Inspector</a>.
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
   - *bsc#hub.d*: included SConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
   - Lollorian's assorted CRE fixes.
-- *FATESP.dlg*: replaced the buggy dialog update process (`REPLACE_TEXTUALLY`) with a more elegant one that actually displays the strref related to Hubelpot Druidic Kit, which solves this <a href="http://www.shsforums.net/topic/34068-problems-installing/#entry515226">annoying bug</a>. Now, Hubelpot transition will be displayed before Imoen.
+- *FATESP.dlg*: replaced the buggy dialog update process (`REPLACE_TEXTUALLY`) with a more elegant one that actually displays the strref related to Hubelpot Druidic Kit, which solves this <a href="http://www.shsforums.net/topic/34068-problems-installing/#entry515226">annoying bug</a>. Now, Hubelpot recall will be displayed before Imoen.
 - *sc#hubquest.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
 - *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
 - Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. Moreover, AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
@@ -274,7 +279,7 @@ The installer includes the following components. The number of each is the compo
 - Appended *tooltip.2da* whenever relevant.
 - Proofread strrefs (Gwendolyne).
 - Fixed token typos: replaced *<LADYLORD>* with *`<PRO_LADYLORD>`* to fix the bug with incorrect gender reference to `<CHARNAME>` if another NPC started the dialog (Austin).
-- Updated *setup.tra* files for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games..
+- Updated *setup.tra* file for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games..
 - Mod Traified. Feel free to provide me with translations. I will include them as soon as possible..
 - Updated deprecated modding tools links.
 - Re-formated, updated and renamed readme file to *hubelpot-readme-english.html*, then moved it into new "*readme*" folder.
