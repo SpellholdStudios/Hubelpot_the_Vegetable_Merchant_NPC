@@ -259,12 +259,13 @@ The installer includes the following components. The number of each is the compo
 - Included all BWP Fixpack patches:
   - *sc#ar0500.baf*: <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry546504">Lollorian's fix for double creation of Inspector</a>.
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
-  - *sc#hub.d*: included SConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
+  - *bsc#hub.d*: included SConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
   - Lollorian's assorted CRE fixes.
-- *FATESP.dlg*: replaced the buggy dialog update process (`REPLACE_TEXTUALLY`) with a more elegant one that actually displays the strref related to Hubelpot Druidic Kit, which solves this <a href="http://www.shsforums.net/topic/34068-problems-installing/#entry515226">annoying bug</a>.
+- *FATESP.dlg*: replaced the buggy dialog update process (`REPLACE_TEXTUALLY`) with a more elegant one that actually displays the strref related to Hubelpot Druidic Kit, which solves this <a href="http://www.shsforums.net/topic/34068-problems-installing/#entry515226">annoying bug</a>. Now, Hubelpot transition will be displayed before Imoen.
 - *sc#hubquest.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
 - *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
 - Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. Moreover, AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
+- *pdialog.2da* and *interdia.2da*: fixed wrong dialogue names (9 characters) that were appended (replaced SC#Hub25D, SC#Hub25J, SC#Hub25P and BSC#Hub25 with SC#Hb25D, SC#Hb25J, SC#Hb25P and BSC#Hb25).
 - No longer overwrites *demmag.cre* (Dracandros), but patches it with  WeiDU's built-in `ADD_CRE_ITEM` function, and removes AR0530.bcs patch.
 - Provided Hubelpot portraits for EE games, and fixed classic medium portrait.
 - Appended *tooltip.2da* whenever relevant.
@@ -282,12 +283,6 @@ The installer includes the following components. The number of each is the compo
 - Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
 - Updated WeiDU installer to v247.
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
-
-## 
-
-- fixed this bug:  - in checks "Kit(Hubelpot...BLAHBLAHBLAH" there were no quotes, now corrected to Kit("Hubelpot"...BLAHBLAHBLAH" (Later this code snippet was changed, see the explanations in the following posts)
-- added a single line for the call in the dialogue with the Fate Spirit (because earlier, when dividing the lines into two different ones, the call did not work)
-
 
 ## 
 
