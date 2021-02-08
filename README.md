@@ -41,16 +41,20 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 <img style="float: left;" src="hubelpot/readme/images/sc_hubm.jpg"> This mod adds the Vegetable Merchant Hubelpot Thistledown to the game. He is a joinable druid-NPC. You can find Hubelpot in Enge's fruit and vegetable shop in the Promenade (he’s leasing the space).<br>
 Hubelpot is by default a Totemic Druid. The village wise man who can call spirits to aid his people is well established in folkloric tradition, and fits Hubelpot well enough. He also has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value. Both of the new kits are NPC only, and both are fairly well balanced compared to other BG2 kits.<br>
 Hubelpot features around 30 banters, none of them breaking the 4th wall, and none of them featuring the word "turnip". He interacts with every Bioware NPC except Sarevok. In ToB he’s still fairly quiet, only speaking up when called, with Volo and at the end of ToB; he does have an epilogue. If there is an expansion, more ToB dialog will be added.<br>
-From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.<br>
+From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.<br><br>
 
 <details><summary><ins>Original note from the authors</ins></summary>
-<br>
+<p>
+
 ###### Hubelpot started out as a joke, turned into a one day NPC, then a one week NPC, and is now an NPC project. Let this be a lesson to all of you never, ever to tell a joke under any circumstances, ever.
-###### The challenge was to create an NPC free from tainted blood, dark secrets, mental illness, etc, etc. The NPC would not step on CHARNAME's lines, would not be a power-gamer's dream, and would be fun to have in the party. What we came up with was Hubelpot.<br><br>
-###### We hope you'll like him.<br><br>
+###### The challenge was to create an NPC free from tainted blood, dark secrets, mental illness, etc, etc. The NPC would not step on CHARNAME's lines, would not be a power-gamer's dream, and would be fun to have in the party. What we came up with was Hubelpot.
+
+
+###### We hope you'll like him.
+
 
 <em>Disclaimer: Hubelpot is not a tool of the devil. Hubelpot is not now nor has he ever been a communist. Hubelpot is not down with his bad self. Hubelpot is not the walrus. He is the vegetable man.</em>
-
+</p>
 </details><br>
 <div align="right"><a href="#top">Back to top</a></div>
 
@@ -257,6 +261,7 @@ The installer includes the following components. The number of each is the compo
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
   - *sc#hub.d*: included SConrad fixes <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry137077">to fire dialogs</a> and <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140124">Edwin banter</a>, plus Austin fixes that 1) solve wrong variable checking preventing right banters with <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/#entry138899">Minsc</a>, Anomen, and Edwin to be fired, 2) fix <a href="http://www.shsforums.net/topic/16633-is-this-a-bug-have-hubelpot-installed/#entry217591">compatibility with the Edwin Romance mod</a>.
   - Lollorian's assorted CRE fixes.
+- *FATESP.dlg*: replaced the buggy dialog update process (`REPLACE_TEXTUALLY`) with a more elegant one that actually displays the strref related to Hubelpot Druidic Kit, which solves this <a href="http://www.shsforums.net/topic/34068-problems-installing/#entry515226">annoying bug</a>.
 - *sc#hubquest.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
 - *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
 - Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. Moreover, AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
@@ -280,14 +285,8 @@ The installer includes the following components. The number of each is the compo
 
 ## 
 
-- fixed this bug: http://www.shsforums.net/topic/34068-problems-installing/#entry515226 - in checks "Kit(Hubelpot...BLAHBLAHBLAH" there were no quotes, now corrected to Kit("Hubelpot"...BLAHBLAHBLAH" (Later this code snippet was changed, see the explanations in the following posts)
+- fixed this bug:  - in checks "Kit(Hubelpot...BLAHBLAHBLAH" there were no quotes, now corrected to Kit("Hubelpot"...BLAHBLAHBLAH" (Later this code snippet was changed, see the explanations in the following posts)
 - added a single line for the call in the dialogue with the Fate Spirit (because earlier, when dividing the lines into two different ones, the call did not work)
-
-+//Updating dlg's.
-+COPY_EXISTING ~FATESP.dlg~ ~override~
-+  REPLACE_TEXTUALLY ~Bring me Hubelpot, the Totemic Druid.~ ~Bring me Hubelpot, the Village Druid.~
-+COPY_EXISTING ~FATESP.dlg~ ~override~
-+  REPLACE_TEXTUALLY ~Bring me Hubelpot, the Totemic Druid.~ ~Bring me Hubelpot, the Vegetable Farmer.~
 
 
 ## 
