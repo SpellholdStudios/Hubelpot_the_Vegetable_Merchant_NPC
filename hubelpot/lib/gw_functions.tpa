@@ -1,26 +1,28 @@
 /* ================================================================================================================================================== *
- * LIST of FUNCTIONS :                                                                                                                                *
- * -------------------                                                                                                                                *
- *  - FUNCTION GW_UPDATE_ITM_DESCRIPTION_TO_EE      : MODIFIES item descriptions to fit EE description format.                         => line #  14  *
- *  - FUNCTION GW_WRITE_EE_ITM_DESCRIPTIONS         : WRITES item descriptions in ITM files according to the game (classical or EE).   => line #  54  *
- *  - MACRO GW_ADJUST_TOOLTIP                       : ADDS new columns in tooltip.2da file if needed.                                  => line # 103  *
- *  - MACRO GW_READ_COL_TOOLTIP                     : READS tooltip.2da file number of columns.                                        => line # 137  *
- *  - FUNCTION GW_ADD_ITEM_TOOLTIPS                 : ADDS a new line in tooltip.2da. file.                                            => line # 152  *
- *  - FUNCTION GW_ALTER_ITEM_ALTER_HEADER_FLAGS     : ALTERS itm extender headers new EE (or ToBEx) flags.                             => line # 198  *
- *  - FUNCTION GW_ITEM_RESTRICT_USABILITY_EE        : DEFINES special item usability restrictions (EE games).                          => line # 324  *
+ * LIST of FUNCTIONS:                                                                                                                                 *
+ * ------------------                                                                                                                                 *
+ *  - FUNCTION GW_UPDATE_ITM_DESCRIPTION_TO_EE      : MODIFIES item descriptions to fit EE description format.                         => line #  16  *
+ *  - FUNCTION GW_WRITE_EE_ITM_DESCRIPTIONS         : WRITES item descriptions in ITM files according to the game (classical or EE).   => line #  55  *
+ *  - MACRO GW_ADJUST_TOOLTIP                       : ADDS new columns in tooltip.2da file if needed.                                  => line # 104  *
+ *  - MACRO GW_READ_COL_TOOLTIP                     : READS tooltip.2da file number of columns.                                        => line # 138  *
+ *  - FUNCTION GW_ADD_ITEM_TOOLTIPS                 : ADDS a new line in tooltip.2da. file.                                            => line # 153  *
+ *  - FUNCTION GW_ALTER_ITEM_ALTER_HEADER_FLAGS     : ALTERS itm extender headers new EE (or ToBEx) flags.                             => line # 199  *
+ *  - FUNCTION GW_ITEM_RESTRICT_USABILITY_EE        : DEFINES special item usability restrictions (EE games).                          => line # 325  *
+ *  - FUNCTION GW_FIND_DLG_RESPONSE_STRING          : LOOKS for state and transition numbers matching a strref in a dialog.            => line # 429  *
+ *  - FUNCTION GW_FIND_FATESP_IMOEN_TRANSITION      : LOOKS for state and transition numbers in fatesp.dlg.                            => line # 504  *
  * ================================================================================================================================================== */
 
-/* ========================================================================================================== *
- * FUNCTION GW_UPDATE_ITM_DESCRIPTION_TO_EE: AJUSTE la DESCRIPTION des OBJETS au format Enhanced Edition.     *
- * ---------------------------------------------------------------------------------------------------------- *
- * Reads variable GW_desc_to_update (@nn or #nnn) in .tra file, alters it to fit EE description format,       *
- * then saves it as variable GW_desc_updated.                                                                 *
- * ========================================================================================================== *
- * FUNCTION GW_WRITE_EE_ITM_DESCRIPTIONS: ÉCRIT les DESCRIPTIONS des OBJETS au format Enhanced Edition.       *
- * ---------------------------------------------------------------------------------------------------------- *
- * Reads variables GW_desc_to_update and GW_undesc_to_update (@nnn or #nnn) in .tra file, alters them to fit  *
- * EE description format if needed, then updates .ITM file.                                                   *
- * ========================================================================================================== */
+/* =========================================================================================================== *
+ *  FUNCTION GW_UPDATE_ITM_DESCRIPTION_TO_EE: AJUSTE la DESCRIPTION des OBJETS au format Enhanced Edition.     *
+ * ----------------------------------------------------------------------------------------------------------- *
+ *  Reads variable GW_desc_to_update (@nn or #nnn) in .tra file, alters it to fit EE description format,       *
+ *  then saves it as variable GW_desc_updated.                                                                 *
+ * =========================================================================================================== *
+ *  FUNCTION GW_WRITE_EE_ITM_DESCRIPTIONS: ÉCRIT les DESCRIPTIONS des OBJETS au format Enhanced Edition.       *
+ * ----------------------------------------------------------------------------------------------------------- *
+ *  Reads variables GW_desc_to_update and GW_undesc_to_update (@nnn or #nnn) in .tra file, alters them to fit  *
+ *  EE description format if needed, then updates .ITM file.                                                   *
+ * =========================================================================================================== */
 
 DEFINE_PATCH_FUNCTION ~GW_UPDATE_ITM_DESCRIPTION_TO_EE~ 
 	STR_VAR GW_desc_to_update = ~~	// reference in format @123 or #123
@@ -36,7 +38,6 @@ OUTER_SPRINT GW_desc_updated
 			COPY - ~.../inlined/GW_%GW_desc_to_update%.tpp~ ~.../inlined/GW_%GW_desc_to_update%.tpp~
 				INSERT_BYTES SOURCE_SIZE (STRING_LENGTH ~%GW_desc_to_update%~)
 				WRITE_ASCIIE SOURCE_SIZE ~%GW_desc_to_update%~
-			VERBOSE
 			INCLUDE ~.../inlined/GW_%GW_desc_to_update%.tpp~
 			OUTER_SPRINT usab @9001		// ~[Uu]niquement[ %tab%]+[Uu]tilisable[ %tab%]+[Pp]ar[ %tab%]*:~ = ~[Oo]nly[ %tab%]+[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 			OUTER_SPRINT unus @9002		// ~\([Nn]on[ %tab%]+\|[Ii]n\)[Uu]tilisable[ %tab%]+[Pp]ar[ %tab%]*:~ = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
@@ -99,11 +100,11 @@ BEGIN
 END		// of DEFINE_PATCH_FUNCTION
 
 
-/* ============================================================================= *
- * MACRO GW_ADJUST_COL_TOOLTIP: ADDS new columns in tooltip.2da file if needed.  *
- * ----------------------------------------------------------------------------- *
- * CODE borrowed and adapted from Miloch's one.                                  *
- * ============================================================================= */
+/* ============================================================================== *
+ *  MACRO GW_ADJUST_COL_TOOLTIP: ADDS new columns in tooltip.2da file if needed.  *
+ * ------------------------------------------------------------------------------ *
+ *  CODE borrowed and adapted from Miloch's one.                                  *
+ * ============================================================================== */
 
 DEFINE_ACTION_MACRO ~GW_ADJUST_COL_TOOLTIP~ BEGIN
 
@@ -321,7 +322,7 @@ END	// of DEFINE_PATCH_FUNCTION
 
 
 /* ================================================================================================================= *
- *  FUNCTION GW_ITEM_RESTRICT_USABILITY_EE : DEFINES special item usability restrictions (EE games)                  *
+ *  FUNCTION GW_ITEM_RESTRICT_USABILITY_EE: DEFINES special item usability restrictions (EE games)                   *
  *                                          INTERDIT L'UTILISATION D'UN OBJET à un type de créature dans BG2EE.      *
  * ----------------------------------------------------------------------------------------------------------------- *
  *  #319 Usability: Item Usability : This effect restricts the item to creature(s) matching the object identifiers.  *
@@ -422,3 +423,107 @@ BEGIN
 	END	 		// of PATCH_IF (GW_shaman) BEGIN
 
 END 			// of DEFINE_PATCH_FUNCTION
+
+
+/* =========================================================================================================================================== *
+ *  FUNCTION GW_FIND_DLG_RESPONSE_STRING: LOOKS for state and transition numbers matching a strref in a dialog.                                *
+ *                                        RECHERCHE de numéros d'état et de transition correspondant à un strref dans un fichier de dialogue.  *
+ * ------------------------------------------------------------------------------------------------------------------------------------------- *
+ *  STR_VAR                                                                                                                                    *
+ *      - GW_string_dlg        = strref to be found (may be @nn, #nnn or nnn).                                                                 *
+ *	RETURNS                                                                                                                                    *
+ *      - GW_transition_found  = Check if strref exists in dialog file (Y = Yes - N = No)                                                      *
+ *      - GW_state_number      = Dialogue state number matching strref.                                                                        *
+ *      - GW_transition_number = Transition number matching strref.                                                                            *
+ * =========================================================================================================================================== */
+
+DEFINE_PATCH_FUNCTION ~GW_FIND_DLG_RESPONSE_STRING~
+    STR_VAR	GW_string_dlg = 0      // string que l'on cherche
+    RET     GW_transition_found	   // Variable indiquant que l'on a trouvé une correspondance ==> Y = strref found
+            GW_state_number        // Numéro du dialogue
+            GW_transition_number   // Numéro de la transition (réponse)
+BEGIN
+
+	PATCH_IF ("%GW_string_dlg%" STR_CMP ~~) OR (GW_string_dlg >= 0) BEGIN
+
+		PATCH_IF ("%GW_string_dlg%" STRING_COMPARE_REGEXP ~^[@#]-?[0-9]+$~ = 0) BEGIN
+			INNER_PATCH_SAVE GW_strref ~%GW_string_dlg%~ BEGIN		// Suppression du premier caractère (@ ou #) - Removes 1st character (@ or #).
+				REPLACE_TEXTUALLY ~^[@#]~  ~~
+			END
+			PATCH_IF ("%GW_string_dlg%" STRING_COMPARE_REGEXP ~^[@]-?[0-9]+$~ = 0) BEGIN
+				SET GW_string_dlg = RESOLVE_STR_REF ((AT %GW_strref%))
+			END
+		END
+
+		SET GW_transition_number = "-99"
+		SET GW_state_number = "-99"
+		SPRINT GW_transition_found "N"
+		READ_LONG 0x08 GW_numstates             // Number of states
+		READ_LONG 0x0c GW_offstates             // Offset of state table from start of file
+		READ_LONG 0x10 GW_numresponse           // Number of transitions
+		READ_LONG 0x14 GW_offresponse           // Offset of transition table from start of file
+/*	LISTED but NOT USED
+		READ_LONG 0x18 GW_offstatetrigger       // Offset of state trigger table from start of file
+		READ_LONG 0x1c GW_numstatetrigger       // Number of state triggers
+		READ_LONG 0x20 GW_offresponsetrigger    // Offset of transition trigger table from start of file
+		READ_LONG 0x24 GW_numresponsetrigger    // Number of transition triggers
+		READ_LONG 0x28 GW_offaction             // Offset of action table from start of file
+		READ_LONG 0x2c GW_numaction             // Number of actions*/
+//		PATCH_PRINT ~CONTROL GW_FIND_DLG_RESPONSE_STRING : %SOURCE_RES%  -  %GW_numstates% States at offset %GW_offstates%  -  %GW_numresponse% Responses  at offset %GW_offresponse%.~
+
+		FOR (state = 0 ; state < GW_numstates ; ++state) BEGIN
+
+			PATCH_IF ("%GW_transition_found%" STR_CMP "Y") BEGIN
+				READ_LONG ("%GW_offstates%" +       (state * 0x10)) GW_state_string         // Actor response text (i.e. what the non-player character says to the party)
+				READ_LONG ("%GW_offstates%" + 0x4 + (state * 0x10)) GW_index_first_response // Index of the first transition corresponding to this state (i.e. the index in the transition table of the first potential response the party can make in this state)
+				READ_LONG ("%GW_offstates%" + 0x8 + (state * 0x10)) GW_state_num_response   // Number of transitions corresponding to this state (i.e. how many possible responses are there to this state). A consecutive range of transitions in the transition table are assigned to this state, starting from 'first', as given by the previous field, ranging up to (but not including) 'first'+'count'.
+//				PATCH_PRINT ~	CONTROL FUNCTION GW_FIND_DLG_RESPONSE_STRING : %SOURCE_RES%  -  State #%state% = %GW_state_string%	-  Nb responses = %GW_state_num_response%  -  Index 1° réponse = %GW_index_first_response%.~
+
+				FOR (response = 0 ; response < GW_state_num_response ; ++response) BEGIN
+					READ_LONG ("%GW_offresponse%" + 0x4 + ("%GW_index_first_response%" * 0x20) + (response * 0x20)) GW_response_string
+
+					PATCH_IF (GW_response_string = GW_string_dlg) BEGIN
+						SET GW_transition_number = response
+						SET GW_state_number = state
+						SPRINT GW_transition_found "Y"
+//						PATCH_PRINT ~	CONTROL FUNCTION GW_FIND_DLG_RESPONSE_STRING : %SOURCE_RES%  - State #%state% = %GW_state_string%  -  Response #%response% = %GW_response_string%.~
+					END
+
+				END // of Looping through responses
+
+			END // PATCH_IF ("%GW_transition_found%" STRING_COMPARE_CASE "Y")
+
+		END // of Looping through states
+
+	END	// of PATCH_IF ("%GW_string_dlg%" STR_CMP ~~) OR (GW_string_dlg >= 0) BEGIN
+	
+END // of DEFINE_PATCH_FUNCTION
+
+
+/* ================================================================================================== *
+ *  FUNCTION GW_FIND_FATESP_IMOEN_TRANSITION : LOOKS for state and transition numbers in fatesp.dlg.  *
+ * -------------------------------------------------------------------------------------------------- *
+ *  We will insert Hubelpot before Imoen using fatesp_string variable defined in ALWAYS block):       *
+ *  #65017 = ~Bring me Imoen, the thief/mage.~ (classical and EE games).                              *
+ * ================================================================================================== */
+
+DEFINE_ACTION_FUNCTION ~GW_FIND_FATESP_IMOEN_TRANSITION~
+    RET     GW_transition_found	   // Variable indiquant que l'on a trouvé une correspondance ==> Y = strref found
+            GW_state_number        // Numéro du dialogue
+            GW_transition_number   // Numéro de la transition (réponse)
+BEGIN
+
+	COPY_EXISTING - ~fatesp.dlg~ ~override~
+
+		PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN  // protects against invalid files
+			LPF ~GW_FIND_DLG_RESPONSE_STRING~ STR_VAR GW_string_dlg = EVAL "%fatesp_string%" RET GW_transition_found GW_state_number GW_transition_number END
+			PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+//				SET fatesp_transition_imoen = GW_transition_number
+//				SET fatesp_state_imoen = GW_state_number
+//				PATCH_PRINT "CONTROL %SOURCE_RES%.dlg  -  Transition found = %GW_transition_found%  at  state = #%GW_state_number%  and  transition = #%GW_transition_number%."
+			END
+		END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
+
+	BUT_ONLY
+
+END

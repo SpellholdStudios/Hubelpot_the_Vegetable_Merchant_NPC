@@ -1,0 +1,232 @@
+/* ===================================================== *
+ *         Druidic   Kit  :   Vegetable   Farmer         *
+ * ===================================================== */
+
+
+/* ------------- *
+ *  Install kit  *
+ * ------------- */
+
+INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+
+ADD_KIT ~SC#VFar~
+// CLASS WEAPON PROFICIENCIES____________________________________________________________________________________
+// CLASWEAP			SMALL_SWORD	LARGE_SWORD		BLUNT       MISSILE     BOW         SPIKED      AXE         SPEAR
+~SC#VFar                 1           0           1           1           0           0           0           1~		// Types d'armes autorisés - BG1 proficiencies
+// WEAPON PROFICIENCIES______________________________________________________________________________________________________
+//                                      B       T   S           F   Q             S S
+//                                      A       W   C           L   U             W I T
+//                      L S             S   S   O   I           A   A           T O N W
+//                      A M             T L H   H   M   W       I   R           W R G O
+//                      R A             A O O   A   I   A       L   T C   S     O D L -
+//                      G L           M R N R   N   T   R     H M   E R L H     - & E W E E E E E E E E E E E E E E E E E E E
+//                      E L       S   I D G T   D K A D H     A O   R O O O     H S W E X X X X X X X X X X X X X X X X X X X
+//                      S S   S B P   S S S S   E A R A A   S L R   S S N R   S A H E A T T T T T T T T T T T T T T T T T T T
+//                      W W   P L I   S W W W   D T W G M C P B N M T S G T D L N I A P R R R R R R R R R R R R R R R R R R R
+//                      O O B E U K A I O O O A S A A G M L E E I A A B B B A I D E P O A A A A A A A A A A A A A A A A A A A
+//                      R R O A N E X L R R R X W N K E E U A R N C F O O O R N E L O N 2 3 4 5 6 7 8 9 1 1 1 1 1 1 1 1 1 1 2
+// WEAPPROF.2DA         D D W R T D E E D D D E O A I R R B R D G E F W W W T G D D N S                 0 1 2 3 4 5 6 7 8 9 0
+~SC#VFar                0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~	// Compétences autorisées - BG2 proficiencies
+// MINIMUM KIT STATS_______________________________________________
+// ABCLASRQ.2DA         STR      DEX    CON     INT     WIS     CHR
+~SC#VFar                 0       0       0       0       12      13~						// Scores de caractéristiques minimaux nécessaires. - minimum stats for the kit.
+// KIT STAT MODIFIERS_______________________________________________
+// ABCLSMOD.2DA         STR      DEX    CON     INT     WIS     CHR
+~SC#VFar                 0        0      0       0       0       0~							// Modificateurs des scores de caractéristiques. - these are the stat modifiers at character creation.
+// REQUIREMENTS TO DUAL TO THIS KIT________________________________
+// ABDCDSRQ.2DA         STR      DEX    CON     INT     WIS     CHR
+~SC#VFar                 0       0       0       0       17      17~						// Caractéristiques minimales pour se jumeler VERS le kit. - stat requirement to dual-class *TO* this kit.
+// REQUIREMENTS TO DUAL FROM THIS KIT______________________________
+// ABDCSCRQ.2DA         STR      DEX    CON     INT     WIS     CHR
+~SC#VFar                 0       0       0       0       15      15~						// Caractéristiques minimales pour se jumeler DEPUIS le kit. - stat requirement to dual-class *FROM* this kit.
+// ALIGNMENT RESTRICTIONS_________________________________________________________________
+// ALIGNMNT.2DA         LG      LN      LE      NG      NN      NE      CG      CN      CE
+~SC#VFar                 0       0       0       0       1       0       0       0       0~	// Alignements autorisés. - alignments that can be chosen for this kit.
+// DUAL CLASS OPTIONS______________________________________________
+// DUALCLASS.2DA        FIG     CLE     MAG     THI     DRU     RAN
+~SC#VFar                 0       0       0       0       0       0~							// Possibilités de jumelage. - check the file for reference on the listing of the classes.
+// KIT ABILITIES 2DA FILE (path to CLAB-type file)
+~hubelpot/kits/sc#vfar.2da~																	// Habilités gagnées par niveau. - 
+// RACIAL KIT AVAILABILITY___________________________________________________________
+// KITTABLE.2DA    This are the races that can choose the kit. or example, K_T_H means thief human and K_T_D means dwarf thief, so putting those here would make this kit selectable by those classes.
+~~																							// Races et classes acceptant le kit. - 
+// UNUSABLE FLAGS AND KIT BASE CLASS: this is the usability flag for the class followed by the class number
+// CLASSES: Mage = 1, Fighter = 2, Cleric = 3, Thief = 4, Bard = 5, Paladin 6, Druid = 11, Ranger = 12, Sorcerer = 19, Monk = 20
+// KITLIST.2DA
+~0x08000000    11~	// Autorisation d'objets - items usability : 0x08000000 = TOTEMIC_DRUID
+// HIGH LEVEL ABILITIES ABBREVIATION: this is the name of the LUxxxx.2DA file, needed for HLAs and appended to LUABBR.2DA.
+// LUABBR.2DA
+~Dr2~																						// Habiletés de Haut niveau. - 
+// TOB STARTING EQUIPMENT_________________________________________________________________________________________________________________________________________________
+//                                                                                   B                                                                                   W
+//                          S                                    C            A      R                                                                                   E
+//                 A        H                     R      R       L     B      M      A              A         A         A         M        M        M       M     M      A
+//                 R        I        H            I      I       O     O      U      C      B       M         M         M         I        I        I       I     I      P
+//                 M        E        E      B     N      N       A     O      L      E      E       M         M         M         S        S        S       S     S      O
+//                 O        L        L      A     G      G       C     T      E      R      L       O         O         O         C        C        C       C     C      N
+// 25STWEAP.2DA    R        D        M      G     1      2       K     S      T      S      T       1         2         3         1        2        3       4     5      1
+				~LEAT20     *      HELM19 BAG27 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM11 SW1H27 STAF08~
+
+// CHARACTER CREATION KIT DESCRIPTION
+// KITLIST.2DA
+SAY @1081  // LOWER = Nom du kit en minuscules - this is the all-lower case version of the kit-name, TRA'ified strings are also accepted.
+SAY @1082  // MIXED = Nom du kit en minuscules avec majuscule au début - this is the capitalized name of the kit.
+SAY @1083  // HELP  = Description du kit - this is the description of the kit.
+
+
+// EE specific
+// -----------
+LAF fl#add_kit_ee
+	INT_VAR
+		//CLASTEXT.2DA       BIOGRAPHY
+//	    biography     = ~~
+		//CLASTEXT.2DA       BRIEFDESC
+//	    briefdesc     = ~kit_briefdesc~
+		//CLASTEXT.2DA       FALLEN
+//	    fallen        = ~0~
+		//CLASTEXT.2DA       FALLEN_NOTICE
+//	    fallen_notice = ~-1~
+	STR_VAR
+		// this is the internal name of your kit. #This_is_a_must (unless you want to crash the installation).
+		// all the other stuff in this listing is optional, if it's there, it will be used
+		// and if it isn't, the class default value will be used instead. Remove the whole "example = ~3 8 1 92~" line.
+		kit_name	= ~SC#VFar~
+		// this is the backstab progressions rate (one number/level, 40 levels), only for kits that need backstab.
+		// BACKSTAB.2DA 0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40
+		//backstab	= ~~
+		// this file (CLSWPBON.2DA) contains three different fields of information, the first one is for the WPSTACK
+		// (the bonus APR from Specialization and higher and from levels 7 and 13 that fighters gain)
+		// if the number is 1, then it'll be enabled, if it's set to 0, it won't, enabled on Warrior classes by default.
+		// the second one is turned by default over Monks, seems like it gives them their custom fists.
+		// the third and last value is the amount of penalty given to the character's
+		// THAC0 when using a weapon they aren't proficient with.
+		// CLSWPBON.2DA		GETS_PROF_APR       UNARMED_DIVISOR     ZERO_SKILL_THAC0
+		//clswpbon	= ~0                   0                   3~
+		// NUMWSLOT.2DA: the number of weapon slot that are displayed in the inventory
+		//numwslot	= ~2~																																	// Inherit from parent class
+		// THIEFSKL.2DA		START_POINTS       LEVEL_POINTS   -   1st value is the amount of Thieving skills point gained at level one and the 2nd is the amount gained in the following levels.
+		//thiefskl	= ~~																																	// Inherit from parent class
+		// TRAPLIMT.2DA		LIMIT   -   maximum amount of traps this kit can set (this is optional and only for Thief and Bard kits)
+		//traplimt	= ~~
+		// this is appended column-wise to CLASCOLR.2DA, the colors are listed here in this order:
+		// METAL (metallic parts of the character's equipment), MINOR_CLOTH (same as Minor Color in the inventory screen),
+		// MAIN_CLOTH (same as Major Color in the Inventory Screen), LEATHER (the leather parts of the character's armor),
+		// ARMOR (this one is for the other parts of the armor that aren't METAL nor LETHER).
+		//CLASCOLR.2DA METAL     MINOR_CLOTH     MAIN_CLOTH     LEATHER     ARMOR
+		//clascolr	= ~66        136             136            66          66~
+		// this is the BONUS that is given to each kit/class' thieving abilities at level 1, appended column-wise to CLASISKL.2da
+		// CLASISKL.2DA		PICK_POCKETS     OPEN_LOCKS     FIND_TRAPS     MOVE_SILENTLY     HIDE_IN_SHADOWS     DETECT_ILLUSION     SET_TRAPS
+		//clasiskl	=		~0                0              0              0                 0                   0                   0~					// Inherit from parent class
+		// this is appended column-wise to THIEFSCL.2da, 100 determines that the player can spent Thieving Points in that thieving ability, and 0 means that they can't. Seems like it has something to do with percentages, but it's not confirmed yet.
+		// THIEFSCL.2DA      PICK_POCKETS     OPEN_LOCKS     FIND_TRAPS     MOVE_SILENTLY     HIDE_IN_SHADOWS     DETECT_ILLUSION     SET_TRAPS     STEALTH
+		//thiefscl	=			~100              100            100            100               100                 100                 0             0~	// Inherit from parent class
+		// HPCLASS.2DA		TABLE. the HP*.2DA table's full name (not including the extension).
+		//hpclass		= ~HPROG~																																// Inherit from parent class
+		// appended to CLSRCREQ.2DA, determines which race can select the kit at character creation, values are either 1 (true/yes) and 0 (false/no), the races go like this:
+		// CLSRCREQ.2DA		HUMAN               ELF                 HALF_ELF            DWARF               HALFLING            GNOME               HALFORC
+		//clsrcreq	=		~1                   0                   0                   0                   0                   0                   0~
+		// CLASTHAC.2DA		BONUS - this is a bonus to the base THAC0 that is given at level 1 and it's permanent.
+		//clasthac	= ~0~
+		// SNEAKATT.2DA   0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40
+		// this is the Sneak Attack entry, only for IWD:EE. It's like the backstab.2da, but with a function.
+		//sneakatt	= ~~
+		// CRIPPSTR.2DA 	 0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40
+		// this is the Crippling Strike entry, only for IWD:EE. It's also like the backstab.2da?
+		//crippstr	= ~~
+END
+
+
+/* -------------------------------------------- *
+ *  Install spells that creates the vegetables  *
+ * -------------------------------------------- */
+
+LAM ~GW_READ_COL_TOOLTIP~ // Reads how many columns are in tooltip.2da file.
+
+// Create Tomatoes
+COPY ~hubelpot/spells/sc#tom.spl~ ~override~
+	SAY NAME1 @1085
+	SAY UNIDENTIFIED_DESC @1086
+
+COPY ~hubelpot/items/sc#tom.itm~ ~override~
+	SAY NAME1 @1087
+	SAY NAME2 @1087
+	SAY UNIDENTIFIED_DESC @1088
+	SAY DESC @1088
+BUT_ONLY
+COPY ~hubelpot/items/sc#tom1.eff~ ~override~
+COPY ~hubelpot/items/sc#tom2.eff~ ~override~
+LAF ~GW_ADD_ITEM_TOOLTIPS~ STR_VAR GW_objet = ~sc#tom~ GW_tooltips = ~15527 @1110~ END	// Thrown - Eat
+
+// Create Potato
+COPY ~hubelpot/spells/sc#pot.spl~ ~override~
+  SAY NAME1 @1089
+  SAY UNIDENTIFIED_DESC @1090
+
+COPY ~hubelpot/items/sc#pot.itm~ ~override~
+	SAY NAME1 @1091
+	SAY NAME2 @1091
+	SAY UNIDENTIFIED_DESC @1092
+	SAY DESC @1092
+BUT_ONLY
+
+// Create Carrot
+COPY ~hubelpot/spells/sc#car.spl~ ~override~
+	SAY NAME1 @1093
+	SAY UNIDENTIFIED_DESC @1094
+
+COPY ~hubelpot/items/sc#car.itm~ ~override~
+	SAY NAME1 @1095
+	SAY NAME2 @1095
+	SAY UNIDENTIFIED_DESC @1096
+	SAY DESC @1096
+BUT_ONLY
+LAF ~GW_ADD_ITEM_TOOLTIPS~ STR_VAR GW_objet = ~sc#car~ GW_tooltips = ~@1110 12084~ END	// Eat - Sanctuary
+
+// Create Pepper
+COPY ~hubelpot/spells/sc#pep.spl~ ~override~
+	SAY NAME1 @1097
+	SAY UNIDENTIFIED_DESC @1098
+
+COPY ~hubelpot/items/sc#pep.itm~ ~override~
+	SAY NAME1 @1099
+	SAY NAME2 @1099
+	SAY UNIDENTIFIED_DESC @1100
+	SAY DESC @1100
+BUT_ONLY
+
+/* DEPRECATED as of v1.1.0
+COPY ~hubelpot/spells/sc#pep2.spl~ ~override~
+	SAY NAME1 ~Create Pepper~
+	SAY UNIDENTIFIED_DESC ~This spell creates a pepper.~
+*/
+
+// Create Garlic
+COPY ~hubelpot/spells/sc#gar.spl~ ~override~
+	SAY NAME1 @1101
+	SAY UNIDENTIFIED_DESC @1102
+
+COPY ~hubelpot/items/sc#gar.itm~ ~override~
+	SAY NAME1 @1103
+	SAY NAME2 @1103
+	SAY UNIDENTIFIED_DESC @1104
+	SAY DESC @1104
+BUT_ONLY
+  
+// Create Beans
+COPY ~hubelpot/spells/sc#bean.spl~ ~override~
+	SAY NAME1 @1105
+	SAY UNIDENTIFIED_DESC @1106
+
+COPY ~hubelpot/items/sc#bean.itm~ ~override~
+	SAY NAME1 @1107
+	SAY NAME2 @1107
+	SAY UNIDENTIFIED_DESC @1108
+	SAY DESC @1108
+BUT_ONLY
+LAF ~GW_ADD_ITEM_TOOLTIPS~ STR_VAR GW_objet = ~sc#bean~ GW_tooltips = ~12056 12030~ END	// Stinking Cloud - Grease
+
+// Pure cosmetic, but so cool!
+// ---------------------------
+COPY_EXISTING ~tooltip.2da~ ~override~
+	PRETTY_PRINT_2DA
+BUT_ONLY

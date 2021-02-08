@@ -255,7 +255,10 @@ The installer includes the following components. The number of each is the compo
 - `ADD_KIT` process: added missing lower kit strref.
 - Converted inventory BAMs to EE: This feature attempts to modify traditional inventory BAMs so that both the large and small icons are utilized by the EE games. The inventory BAM must have two sequences, the first containing the "large" inventory icon frame and the second containing the "small" inventory icon frame to be processed. Inventory icon BAMs in the bam folder that meet these requirements are patched and saved back to the *override* folder.
 - Fixed bam files: fixed frames coordinates and palettes.
-- Spell and item abilities: fixed wrong opcode settings when accurate (Timing mode: *Delay/Permanent* replaced with *Instant/Permanent until death*. Dispel/Resistance: *Not dispel/Bypass resistance* replaced with *Natural/Nonmagical*...).
+- Kits:
+  - Re-enabled and fixed all optional Druidic kits.
+  - Added missing lower case versions of the kits names.
+  - Spell and item abilities: fixed wrong opcode settings when accurate (Timing mode: *Delay/Permanent* replaced with *Instant/Permanent until death*. Dispel/Resistance: *Not dispel/Bypass resistance* replaced with *Natural/Nonmagical*...).
 - Included all BWP Fixpack patches:
   - *sc#ar0500.baf*: <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry546504">Lollorian's fix for double creation of Inspector</a>.
   - *sc#ar0530.baf* and *sc#hubquest.d*: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry482945">Lollorian's GLOBAL variable fixes</a> reported <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-5#entry482947">here</a>.
