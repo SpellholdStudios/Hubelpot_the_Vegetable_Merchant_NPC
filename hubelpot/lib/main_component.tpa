@@ -1,0 +1,418 @@
+/* ====================================== *
+ *         COMPONENT INSTALLATION         *
+ * ====================================== */
+
+SILENT
+
+/* -------------------------------------------------------------------------------------------------- *
+ *     Adds CamDawg's custom IsValidForPartyDialogue state used throughout Hubelpot npc. Thanks Cam!  *
+ * -------------------------------------------------------------------------------------------------- *
+ *  covers STATE_CONFUSED, STATE_FEEBLEMINDED, STATE_SILENCED, STATE_DEAD, STATE_ACID_DEATH,          *
+ *  STATE_FLAME_DEATH, STATE_EXPLODING_DEATH, STATE_STONE_DEATH, STATE_FROZEN_DEATH, STATE_HELPLESS,  *
+ *  STATE_STUNNED, STATE_PANIC, STATE_BERSERK, STATE_SLEEPING                                         *
+ * -------------------------------------------------------------------------------------------------- *
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~*/
+
+
+/* ------------------------------ *
+ *  Fixing Imoen's dialogue file  *
+ * ------------------------------ *
+
+// Add Imoen's banter file if Fixpack isn't installed
+// --------------------------------------------------
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~cdbehbla.pro~ BEGIN
+	ACTION_IF (is_tob OR is_ee) BEGIN 
+		COPY_EXISTING ~interdia.2da~ ~override~
+			SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
+		BUT_ONLY
+	END ELSE BEGIN
+		APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ UNLESS ~[ %TAB%]BIMOEN2[ %TAB%%LNL%%MNL%%WNL%]~ // fixes SoA version
+	END
+END
+
+// Gives Imoen a banter file if there isn't one already
+// ----------------------------------------------------
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~bimoen2.dlg~ BEGIN
+	<<<<<<<< adrian/dialogue/bimoen2.d
+  BEGIN BIMOEN2
+  >>>>>>>>
+	COMPILE ~adrian/dialogue/bimoen2.d~
+END*/
+
+
+/* ------------------------ *
+ *  Installing audio files  *
+ * ------------------------ */
+
+PRINT "Installing audio files..."
+SILENT
+
+LAF HANDLE_AUDIO END
+
+
+/* ----------------- *
+ *  Installing Kits  *
+ * ----------------- */
+
+ACTION_IF is_village_druid_kit BEGIN
+	PRINT "Installing Village Druid kit..."
+	SILENT
+	INCLUDE ~%MOD_FOLDER%/lib/village_druid_kit.tpa~
+END
+
+ACTION_IF is_vegetable_farmer_kit BEGIN
+	PRINT "Installing Vegetable Farmer kit..."
+	SILENT
+	INCLUDE ~%MOD_FOLDER%/lib/vegetable_farmer_kit.tpa~
+END
+
+
+/* -------------------------------------- *
+ *  Installing SoA dialogues and scripts  *
+ * -------------------------------------- */
+
+PRINT "Compiling dialogues and scripts..."
+SILENT
+
+// Compiling SoA dialogues...
+COMPILE ~hubelpot/dialogue/sc#hub.d~      USING ~hubelpot/lang/%s/sc#quest.tra~
+COMPILE ~hubelpot/dialogue/bsc#hub.d~
+COMPILE ~hubelpot/dialogue/sc#hubquest.d~ USING ~hubelpot/lang/%s/sc#quest.tra~
+
+// Compiling SoA scripts...
+COMPILE ~hubelpot/scripts/sc#hub.baf~
+COMPILE ~hubelpot/scripts/sc#hubx.baf~
+
+EXTEND_BOTTOM ~ar0406.bcs~ ~hubelpot/scripts/sc#ar0406.baf~
+EXTEND_BOTTOM ~ar0500.bcs~ ~hubelpot/scripts/sc#ar0500.baf~
+
+COPY_EXISTING ~ar0509.are~ ~override~
+	WRITE_ASCII 0x94 ~AR0509~
+BUT_ONLY
+EXTEND_BOTTOM ~ar0509.bcs~ ~hubelpot/scripts/sc#ar0509.baf~ USING ~hubelpot/lang/%s/sc#quest.tra~
+
+/* DEPRECATED as of v1.1.0: moved into demmag.cre file
+COPY_EXISTING ~ar0530.are~ ~override~
+	WRITE_ASCII 0x94 ~AR0530~
+BUT_ONLY
+EXTEND_BOTTOM ~ar0530.bcs~ ~hubelpot/scripts/sc#ar0530.baf~*/
+
+COPY_EXISTING ~ar0707.are~ ~override~
+	READ_ASCII 0x94 ar0707_script
+BUT_ONLY
+ACTION_IF NOT (~%ar0707_script%~ STR_EQ ~AR0707~) BEGIN
+	EXTEND_BOTTOM ~%ar0707_script%.bcs~ ~hubelpot/scripts/sc#ar0707.baf~
+END ELSE BEGIN
+	EXTEND_BOTTOM ~ar0707.bcs~ ~hubelpot/scripts/sc#ar0707.baf~
+END
+
+
+/* -------------------------------------- *
+ *  Installing ToB dialogues and scripts  *
+ * -------------------------------------- */
+
+// Compiling ToB dialogues...
+COMPILE ~hubelpot/dialogue/sc#hub25.d~
+COMPILE ~hubelpot/dialogue/bsc#hub25.d~
+
+// Compiling ToB scripts...
+COMPILE ~hubelpot/scripts/sc#hub25.baf~
+
+
+/* ------------- *
+ *  Fate Spirit  *
+ * ------------- */
+
+ACTION_IF is_eet BEGIN
+	INCLUDE ~EET/other/EET_functions.tph~
+	LAF ~EET_NPC_TRANSITION~
+		INT_VAR
+			type = 2                       // NPC is summon-able if met before
+			default_ToB = 1
+		STR_VAR
+			dv           = "Hubelpot"      // death variable of your NPC
+			override_SoA = "sc#hub25"      // override script of your NPC (SoA)
+			override_ToB = "sc#hub25"      // override script of your NPC (ToB)
+			dialog_ToB   = "sc#fatespirit" // joining dialogue for ToB
+			traFile      = EVAL "hubelpot/lang/%LANGUAGE%/sc#fatespirit.tra"
+			string       = "@0"
+			stringPosDV  = "Imoen2"
+	END
+END ELSE BEGIN
+	LAF ~GW_FIND_FATESP_IMOEN_TRANSITION~ RET fatesp_transition_imoen = GW_transition_number fatesp_state_imoen = GW_state_number END
+	COMPILE EVALUATE_BUFFER ~hubelpot/dialogue/sc#fatespirit.d~
+END
+
+
+/* ---------------------- *
+ *  Journal entries (EE)  *
+ * ---------------------- */
+
+ADD_JOURNAL @2001 @2002 @2003 @2004 @2005 @2006 USING ~hubelpot/lang/%s/sc#quest.tra~
+
+
+/* ---------------------- *
+ *  Installing portraits  *
+ * ---------------------- */
+
+PRINT "Installing portraits..."
+SILENT
+
+COPY ~%MOD_FOLDER%/portraits%var_ee%~ ~override~
+
+
+/* ---------------------- *
+ *  Installing creatures  *
+ * ---------------------- */
+
+PRINT "Installing creatures..."
+SILENT
+
+// Hubelpot NPC
+COPY ~hubelpot/creatures/sc#hub.cre~	~override~
+     ~hubelpot/creatures/sc#hub25.cre~	~override~
+	SAY NAME1 @1001
+	SAY NAME2 @1001
+/*	PATCH_IF is_ee BEGIN
+		WRITE_ASCII 0x34 ~sc#bubm~ #8
+		WRITE_ASCII 0x3c ~sc#hubl~ #8
+	END*/
+	PATCH_IF is_village_druid_kit BEGIN
+		SET kit_id = IDS_OF_SYMBOL(~kit~ ~SC#VDrd~)
+		WRITE_SHORT 0x244 (kit_id >> 16) & 0xffff
+		WRITE_SHORT 0x246 kit_id & 0xffff 
+	END
+	PATCH_IF is_vegetable_farmer_kit BEGIN
+		SET kit_id = IDS_OF_SYMBOL(~kit~ ~SC#VFar~)
+		WRITE_SHORT 0x244 (kit_id >> 16) & 0xffff
+		WRITE_SHORT 0x246 kit_id & 0xffff 
+	END
+	SAY MORALE @1002
+	SAY HAPPY @1003
+	SAY UNHAPPY_ANNOYED @1004
+	SAY UNHAPPY_SERIOUS @1005
+	SAY UNHAPPY_BREAKING @1006
+	SAY LEADER @1007
+	SAY TIRED @1008
+	SAY BORED @1009
+	SAY BATTLE_CRY1 @1010
+	SAY BATTLE_CRY2 @1011
+	SAY BATTLE_CRY3 @1012
+	SAY BATTLE_CRY4 @1013
+	SAY BATTLE_CRY5 @1014
+	SAY DAMAGE ~~ [sc#hub14]
+	SAY DYING @1016
+	SAY HURT @1017
+	SAY AREA_FOREST @1018
+	SAY AREA_CITY @1019
+	SAY AREA_DUNGEON @1020
+	SAY AREA_DAY @1021
+	SAY AREA_NIGHT @1022
+	SAY SELECT_COMMON1 @1023
+	SAY SELECT_COMMON2 @1024
+	SAY SELECT_COMMON3 @1025
+	SAY SELECT_COMMON4 @1026
+	SAY SELECT_COMMON5 @1027
+	SAY SELECT_COMMON6 @1028
+	SAY SELECT_ACTION1 @1029
+	SAY SELECT_ACTION2 @1030
+	SAY SELECT_ACTION3 @1031
+	SAY SELECT_ACTION4 @1032
+	SAY SELECT_ACTION5 @1033
+	SAY SELECT_ACTION6 @1034
+	SAY SELECT_ACTION7 @1035
+	SAY SELECT_RARE1 @1036
+	SAY SELECT_RARE2 @1037
+	SAY CRITICAL_HIT @1038
+	SAY CRITICAL_MISS @1039
+	SAY TARGET_IMMUNE @1040
+	SAY INVENTORY_FULL @1041
+	SAY PICKED_POCKET ~~
+	SAY HIDDEN_IN_SHADOWS ~~
+	SAY SPELL_DISRUPTED @1043
+	SAY SET_A_TRAP ~~
+	SAY BIO @1044
+
+// Hamlish Thistledown
+COPY ~hubelpot/creatures/sc#ham.cre~ ~override~
+	SAY NAME1 @1046
+	SAY NAME2 @1046
+
+// Sweet Fanny Adams
+COPY ~hubelpot/creatures/sc#fan.cre~ ~override~
+	SAY NAME1 @1047
+	SAY NAME2 @1047
+
+// Brinsley Blake
+COPY ~hubelpot/creatures/sc#bla.cre~ ~override~
+	SAY NAME1 @1048
+	SAY NAME2 @1048
+
+// Gnome Teamster
+ COPY ~hubelpot/creatures/sc#gt1.cre~ ~override~
+      ~hubelpot/creatures/sc#gt2.cre~ ~override~
+	SAY NAME1 @1049
+	SAY NAME2 @1049
+
+// Dracandros
+COPY_EXISTING ~demmag.cre~ ~override~
+	ADD_CRE_ITEM ~sc#hugl~ #0 #0 #0 ~UNSTEALABLE~ ~INV~ // Merchant Guild's Gold
+	ADD_CRE_ITEM ~sc#slno~ #0 #0 #0 ~UNSTEALABLE~ ~INV~ // Dracandros' Note
+	ADD_CRE_ITEM ~tacstaf~ #0 #0 #0 ~UNSTEALABLE~ ~INV~ // Sapient Staff
+BUT_ONLY
+
+
+/* ------------------ *
+ *  Installing items  *
+ * ------------------ */
+
+PRINT "Installing items..."
+SILENT
+
+// Horn of Herne the Hunted
+COPY ~hubelpot/items/tachorn2.itm~ ~override~
+	SAY NAME1 @1051
+	SAY NAME2 @1052
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@1054" END
+	SAY UNIDENTIFIED_DESC @1053
+
+// Dracandros' Note
+COPY ~hubelpot/items/sc#slno.itm~ ~override~
+	SAY NAME1 @1055
+	SAY NAME2 @1055
+	SAY UNIDENTIFIED_DESC @1056
+	SAY DESC @1056
+
+// Merchant Guild's Gold
+COPY ~hubelpot/items/sc#hugl.itm~ ~override~
+	SAY NAME1 @1057
+	SAY NAME2 @1057
+	SAY UNIDENTIFIED_DESC @1058
+	SAY DESC @1058
+
+// Sapient Staff : TODO remove Learn spell effect.
+COPY ~hubelpot/items/tacstaf/itm/tacstaf.itm~ ~override~
+	SAY NAME1 @1064
+	SAY NAME2 @1065
+	SAY DESC @1066
+// Spell file
+COPY ~hubelpot/items/tacstaf/spl/tacstaf.spl~ ~override~
+  	SAY NAME1 @1065
+  	SAY UNIDENTIFIED_DESC @1066
+// Cre files
+COPY ~hubelpot/items/tacstaf/cre/tacstaf1.cre~ ~override~
+	SAY NAME1 @1059
+	SAY NAME2 @1059
+COPY ~hubelpot/items/tacstaf/cre/tacstaf2.cre~ ~override~
+	SAY NAME1 @1060
+	SAY NAME2 @1060
+COPY ~hubelpot/items/tacstaf/cre/tacstaf3.cre~ ~override~
+	SAY NAME1 @1061
+	SAY NAME2 @1061
+COPY ~hubelpot/items/tacstaf/cre/tacstaf4.cre~ ~override~
+	SAY NAME1 @1062
+	SAY NAME2 @1062
+COPY ~hubelpot/items/tacstaf/cre/tacstaf5.cre~ ~override~
+	SAY NAME1 @1063
+	SAY NAME2 @1063
+
+
+/* --------------------------------- *
+ *  Copy BAMs or convert them to EE  *
+ * --------------------------------- */
+
+PRINT "Installing bams..."
+SILENT
+
+ACTION_IF is_ee BEGIN
+	INCLUDE ~%MOD_FOLDER%/lib/gw_convert_inventory_bam_to_ee.tpa~	         // Loads function converting inventory BAMs to EE.
+	OUTER_SPRINT file-exc ~sc#beid sc#caid sc#gaid sc#peid sc#poid sc#toid ~ // Special case: description icons don't need to be converted.
+	ACTION_BASH_FOR ~%MOD_FOLDER%/bams/~ ~^.+\.bam$~ BEGIN
+		ACTION_TO_LOWER %BASH_FOR_FILE%
+		ACTION_TO_LOWER %BASH_FOR_RES%
+		ACTION_IF (~%file-exc%~ STRING_CONTAINS_REGEXP ~%BASH_FOR_RES%~ = 1) BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
+				LPF ~gw_convert_inventory_bam_to_ee~ END
+			BUT_ONLY
+		END ELSE BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
+		END
+	END
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%/bams~	~override~
+END
+
+
+/* ----------------- *
+ *  Appending files  *
+ * ----------------- */
+
+PRINT "Appending files.."
+SILENT
+
+APPEND ~pdialog.2da~ ~Hubelpot sc#hubp sc#hubj sc#hubd~ UNLESS ~Hubelpot~ UNLESS ~25POST~
+APPEND ~pdialog.2da~ ~Hubelpot sc#hubp sc#hubj sc#hubd sc#hb25p sc#hb25j sc#hb25d sc#hub25~ UNLESS ~Hubelpot~ IF ~25POST~
+
+APPEND ~interdia.2da~ ~Hubelpot bsc#hub~ UNLESS ~Hubelpot~ UNLESS ~25FILE~
+APPEND ~interdia.2da~ ~Hubelpot bsc#hub bsc#hb25~ UNLESS ~Hubelpot~ IF ~25FILE~
+
+
+/* ----------- *
+ *  Epilogues  *
+ * ----------- */
+
+PRINT "Installing Epilogues..."
+SILENT
+
+EXTEND_TOP ~ar6200.bcs~ ~hubelpot/scripts/sc#ar6200.baf~
+
+COPY ~hubelpot/epilogues/sc#hubbio.2da~ ~override~
+	REPLACE ~99999~ @1050
+
+
+// Modification du dialogue 11 : Ajout de la variable ajustant la remise dans le magasin (pas de remise par défaut).
+// -----------------------------
+
+ACTION_IF is_village_druid_kit OR is_vegetable_farmer_kit BEGIN
+
+	WITH_TRA ~%MOD_FOLDER%/lang/%s/sc#fatespirit.tra~ BEGIN
+	// #32661 = ~Oui, s'il vous plaît. Montrez-moi donc ce que vous avez en magasin.~
+	COPY_EXISTING - ~FATESP.dlg~ ~override~
+		PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN  // protects against invalid files
+
+			LPF ~GW_FIND_DLG_RESPONSE_STRING~ STR_VAR GW_string_dlg = "@0" RET GW_transition_found GW_state_number GW_transition_number END
+			PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+				SET FATESP_Transition_hub = GW_transition_number
+				SET FATESP_State_hub = GW_state_number
+//				SET FATESP_Transition_hubB = GW_transition_number + 1
+					PATCH_PRINT "%SOURCE_RES%.dlg  -  Transition found = %GW_transition_found%  -  state = #%GW_state_number%  -  transition = #%GW_transition_number%."
+			END
+
+		END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
+	BUT_ONLY
+END
+END ELSE BEGIN
+
+	OUTER_SET FATESP_State_hub = (0 - 1)
+
+END
+
+ACTION_IF (FATESP_State_hub > 0) BEGIN
+
+	WITH_TRA ~%MOD_FOLDER%/lang/%s/sc#fatespirit.tra~ BEGIN
+		ACTION_IF is_village_druid_kit    BEGIN OUTER_SET FATESP_new_strref = RESOLVE_STR_REF (@1) END
+		ACTION_IF is_vegetable_farmer_kit BEGIN OUTER_SET FATESP_new_strref = RESOLVE_STR_REF (@2) END
+	END
+
+	<<<<<<<< .../%MOD_FOLDER%/inlined/fatesp_mod.d
+ALTER_TRANS FATESP
+BEGIN %FATESP_State_hub% END        // state number (can be more than one)
+BEGIN %FATESP_Transition_hub% END   // transition number (can be more than one)
+BEGIN                               // list of changes
+	"REPLY" ~#%FATESP_new_strref%~
+END
+>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~.../%MOD_FOLDER%/inlined/fatesp_mod.d~ //USING ~%MOD_FOLDER%/lang/%s/sc#fatespirit.tra~
+
+END	// of ACTION_IF (FATESP_State_hub > 0)
+

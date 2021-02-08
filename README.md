@@ -155,9 +155,9 @@ The installer includes the following components. The number of each is the compo
 ## 
 
 #### [0-2] Hubelpot Thistledown, the Vegetable Merchant NPC mod
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[0]** Hubelpot is a Totemic Druid (by default)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[1]** Hubelpot is a Village Druid (Druidic kit)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[2]** Hubelpot is a Vegetable Farmer (Druidic kit)<br><br>
+&nbsp;&nbsp;&nbsp;**[0]** Hubelpot is a Totemic Druid (by default)<br>
+&nbsp;&nbsp;&nbsp;**[1]** Hubelpot is a Village Druid (Druidic kit)<br>
+&nbsp;&nbsp;&nbsp;**[2]** Hubelpot is a Vegetable Farmer (Druidic kit)<br><br>
 
 &#10173; This main component adds the Vegetable Merchant Hubelpot Thistledown to the game. He is by default a Totemic Druid, but has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value.
 
