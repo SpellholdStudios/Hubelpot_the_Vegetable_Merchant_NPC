@@ -39,7 +39,7 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 ## <a name="intro" id="intro"></a>Overview
 
 <img style="float: left;" src="hubelpot/readme/images/sc_hubm.jpg"> This mod adds the Vegetable Merchant Hubelpot Thistledown to the game. He is a joinable druid-NPC. You can find him in Enge's fruit and vegetable shop in Waukeen's Promenade (he’s leasing the space).<br>
-Hubelpot is by default a Totemic Druid. The village wise man who can call spirits to aid his people is well established in folkloric tradition, and fits Hubelpot well enough. He also has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value. Both of the new kits are NPC only, and both are fairly well balanced compared to other BG2 kits.<br>
+Hubelpot is by default a Totemic Druid. The village wise man who can call spirits to aid his people is well established in folkloric tradition, and fits Hubelpot well enough. He also has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value. Both of the new kits are NPC only, and both are fairly well-balanced compared to other BG2 kits.<br>
 Hubelpot features around 30 banters, none of them breaking the 4th wall, and none of them featuring the word "turnip". He interacts with every Bioware NPC except Sarevok. In ToB he’s still fairly quiet, only speaking up when called, with Volo and at the end of ToB; he does have an epilogue. If there is an expansion, more ToB dialog will be added.<br>
 From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.<br><br>
 
@@ -271,16 +271,16 @@ The installer includes the following components. The number of each is the compo
   - Lollorian's assorted CRE fixes.
 - *FATESP.dlg*: replaced the buggy dialog update process (`REPLACE_TEXTUALLY`) with a more elegant one that actually displays the strref related to Hubelpot Druidic Kit, which solves this <a href="http://www.shsforums.net/topic/34068-problems-installing/#entry515226">annoying bug</a>. Now, Hubelpot recall will be displayed before Imoen.
 - *sc#hubquest.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-3#entry141647">the bug when gold could remain in the inventory after the quest</a> (added `TakePartyItem("SC#HuGl")` action).
-- *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocketplane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
+- *sc#hub25.d*: included Austin fix to solve <a href="http://www.shsforums.net/topic/9831-bug-reports-please-post-here/page-2#entry140470">a dialog bug with Solar in the Pocket plane</a> by renaming *SC#Hub25J.d* to *SC#Hb25J.d*.
 - Fixed possible incompatibilities with other mods also patching AR0707 script: included <a href="http://www.shsforums.net/topic/56342-hubelpot-and-ar0707-possible-incompatibilities/">Argent77's fix</a>. Moreover, AR0707.bcs will always be patched in addition to whatever the script of AR0707.are is called.
 - *pdialog.2da* and *interdia.2da*: fixed wrong dialogue names (9 characters) that were appended (replaced SC#Hub25D, SC#Hub25J, SC#Hub25P and BSC#Hub25 with SC#Hb25D, SC#Hb25J, SC#Hb25P and BSC#Hb25).
 - No longer overwrites *demmag.cre* (Dracandros), but patches it with  WeiDU's built-in `ADD_CRE_ITEM` function, and removes AR0530.bcs patch.
 - Provided Hubelpot portraits for EE games, and fixed classic medium portrait.
 - Appended *tooltip.2da* whenever relevant.
 - Proofread strrefs (Gwendolyne).
-- Fixed token typos: replaced *<LADYLORD>* with *`<PRO_LADYLORD>`* to fix the bug with incorrect gender reference to `<CHARNAME>` if another NPC started the dialog (Austin).
-- Updated *setup.tra* file for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games..
-- Mod Traified. Feel free to provide me with translations. I will include them as soon as possible..
+- Fixed token typos: replaced *`<LADYLORD>`* with *`<PRO_LADYLORD>`* to fix the bug with incorrect gender reference to `<CHARNAME>` if another NPC started the dialog (Austin).
+- Updated *setup.tra* file for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games.
+- Mod Traified. Feel free to provide me with translations. I will include them as soon as possible.
 - Updated deprecated modding tools links.
 - Re-formated, updated and renamed readme file to *hubelpot-readme-english.html*, then moved it into new "*readme*" folder.
 - Removed useless files and backup folder.

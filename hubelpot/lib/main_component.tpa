@@ -385,7 +385,7 @@ ACTION_IF is_village_druid_kit OR is_vegetable_farmer_kit BEGIN
 				SET FATESP_Transition_hub = GW_transition_number
 				SET FATESP_State_hub = GW_state_number
 //				SET FATESP_Transition_hubB = GW_transition_number + 1
-					PATCH_PRINT "%SOURCE_RES%.dlg  -  Transition found = %GW_transition_found%  -  state = #%GW_state_number%  -  transition = #%GW_transition_number%."
+//					PATCH_PRINT "CONTROL FATESP.dlg : %SOURCE_RES%.dlg  -  Transition found = %GW_transition_found%  -  state = #%GW_state_number%  -  transition = #%GW_transition_number%."
 			END
 
 		END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
