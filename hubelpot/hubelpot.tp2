@@ -1,0 +1,116 @@
+BACKUP ~hubelpot/backup~
+//AUTHOR ~sebastian8987@edu.upplands-bro.se~ //Coder extraordinaire!
+SUPPORT ~Spellhold Studios Staff at http://www.shsforums.net/forum/156-hubelpot/~
+
+VERSION ~v1.1.0~
+
+README ~hubelpot/readme/hubelpot-readme-english.html~
+
+//ASK_EVERY_COMPONENT
+ALLOW_MISSING ~ar0707.bcs~
+              ~ar0530.bcs~
+              ~ar0509.bcs~
+
+ALWAYS
+
+	ACTION_IF NOT VARIABLE_IS_SET is_ee BEGIN // check to make this happen only once per install
+
+	SILENT
+
+	/* ---------------------------------------------------- *
+	 *    Determines if the game is an Enhanced Edition.    *
+	 * ---------------------------------------------------- */
+		OUTER_SET is_ee = (GAME_IS ~bg2ee eet~) ? 1 : 0 // EE game
+		OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0      // eet
+
+	/* -------------------------------- *
+	 *    Loads macros and functions    *
+	 * -------------------------------- */
+		INCLUDE ~%MOD_FOLDER%/lib/gw_functions.tpa~ // Loads macros and functions library dealing with tooltip appending and specific EE items descriptions.
+
+		ACTION_IF is_ee BEGIN
+			OUTER_SPRINT var_ee "_ee"
+		END ELSE BEGIN
+			OUTER_SPRINT var_ee ""
+		END
+
+		// Variable used by function GW_FIND_FATESP_IMOEN_TRANSITION to find before which transition Hubelpot will be recalled by Fate Spirit.
+		OUTER_SET fatesp_string = 65017 // ~Bring me Imoen, the thief/mage.~
+
+	/* --------------------------------------------------------------------------------------------- *
+	 *    Convert strings to UTF-8 for BGEE/BG2EE                                                    *
+	 *    No exception, everything needs to be converted                                             *
+	 *    setup.tra contains in game texts as well as installation texts and need to be converted    *
+	 * --------------------------------------------------------------------------------------------- */
+		ACTION_DEFINE_ARRAY sc#noconvert BEGIN END
+		// any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+		ACTION_DEFINE_ARRAY sc#reload BEGIN setup END
+
+		LAF HANDLE_CHARSETS
+			INT_VAR
+				infer_charsets = 1
+			STR_VAR
+				tra_path = EVAL ~%MOD_FOLDER%/lang~
+				noconvert_array = cr_noconvert
+				reload_array = cr_reload
+		END
+
+	END
+
+END
+
+AUTO_TRA ~hubelpot/lang/%s~
+
+LANGUAGE ~English~
+         ~english~
+         ~hubelpot/lang/english/setup.tra~
+
+
+/* =================================================== *
+ *  Hubelpot Thistledown, the Vegetable Merchant NPC)  *
+ * =================================================== */
+
+BEGIN @0                                    // ~Hubelpot is a Totemic Druid (default kit)~
+DESIGNATED 0 LABEL "hubelpot_npc_totemic_druid"
+SUBCOMPONENT @3                             // ~Hubelpot Thistledown, the Vegetable Merchant NPC mod~
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @100  // ~You must have Throne of Bhaal or BG2:EE installed to install Hubelpot the Vegetable Merchant NPC mod.~
+
+OUTER_SET is_village_druid_kit    = 0
+OUTER_SET is_vegetable_farmer_kit = 0
+
+INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
+
+
+BEGIN @1  // ~Hubelpot is a Village Druid (alternate kit)~
+DESIGNATED 1 LABEL "hubelpot_npc_village_druid"
+SUBCOMPONENT @3
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @100
+
+OUTER_SET is_village_druid_kit    = 1
+OUTER_SET is_vegetable_farmer_kit = 0
+
+INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
+
+
+BEGIN @2  // ~Hubelpot is a Vegetable Farmer (alternate kit)~
+DESIGNATED 2 LABEL "hubelpot_npc_vegetable_farmer"
+SUBCOMPONENT @3
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @100
+
+OUTER_SET is_village_druid_kit    = 0
+OUTER_SET is_vegetable_farmer_kit = 1
+
+INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
+
+
+
+/* ============================== *
+ *  Alternate Portrait by Enkida  *
+ * ============================== */
+BEGIN @10  // ~Alternate Portrait by Enkida~
+DESIGNATED 10 LABEL "hubelpot_npc_alternate_portrait"
+REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~hubelpot.tp2~ ~0~)
+				OR (MOD_IS_INSTALLED ~hubelpot.tp2~ ~1~)
+				OR (MOD_IS_INSTALLED ~hubelpot.tp2~ ~2~)) @101 // ~Please install Hubelpot NPC main component before additional content.~
+
+COPY ~%MOD_FOLDER%/portraits_alt%var_ee%~ ~override~
