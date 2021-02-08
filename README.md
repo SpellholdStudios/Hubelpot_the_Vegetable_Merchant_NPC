@@ -239,7 +239,7 @@ The installer includes the following components. The number of each is the compo
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added `VERSION` flag.
 - Added `README` command.
-- Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charset<ins>s</ins>*).
+- Added `HANDLE_CHARSETS` function to convert string entries for EE games (to prepare for possible translations).
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added components `DESIGNATED` numbers and "*hubelpot_npc_totemic_druid*", "*hubelpot_npc_village_druid*", "*hubelpot_npc_vegetable_farmer*" and "*hubelpot_npc_alternate_portait*" `LABELS`.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
