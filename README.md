@@ -44,13 +44,13 @@ Hubelpot features around 30 banters, none of them breaking the 4th wall, and non
 From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.<br>
 
 <details><summary><ins>Original note from the authors</ins></summary>
-<br><p>
+<br>
 ###### Hubelpot started out as a joke, turned into a one day NPC, then a one week NPC, and is now an NPC project. Let this be a lesson to all of you never, ever to tell a joke under any circumstances, ever.
 ###### The challenge was to create an NPC free from tainted blood, dark secrets, mental illness, etc, etc. The NPC would not step on CHARNAME's lines, would not be a power-gamer's dream, and would be fun to have in the party. What we came up with was Hubelpot.<br><br>
 ###### We hope you'll like him.<br><br>
 
 <em>Disclaimer: Hubelpot is not a tool of the devil. Hubelpot is not now nor has he ever been a communist. Hubelpot is not down with his bad self. Hubelpot is not the walrus. He is the vegetable man.</em>
-</p>
+
 </details><br>
 <div align="right"><a href="#top">Back to top</a></div>
 
@@ -143,11 +143,10 @@ In addition to the methods above for removing individual components, you can com
 
 The installer includes the following components. The number of each is the component *`DESIGNATED`* number which gives it a fixed install position and allows automated installers to specify component choices.
 
->Optional: All subcomponents require the main component (they need to since it's the one that installs new content). All components are otherwise optional.
 
 ## 
 
-**0. Hubelpot **<br />
+#### [0-2] Hubelpot Thistledown, the Vegetable Merchant NPC mod
 
 &#10173; Main component description.
 
@@ -157,8 +156,9 @@ The installer includes the following components. The number of each is the compo
 
 &#10173; This optional component replaces Hubelpot portraits with Endika alternate one<br>.
 
-<img style="float: center;" src="hubelpot/readme/images/sc_hubm2.jpg">
-
+<div align="center">
+<img src="hubelpot/readme/images/sc_hubm2.jpg">
+</div>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
