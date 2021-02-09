@@ -24,7 +24,7 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 
 ## 
 
-[Read the mod's readme](https://GwendolyneFreddy.github.io/readmes/hubelpot-readme-english.html)
+[Read the mod's readme](https://spellholdstudios.github.io/readmes/hubelpot-readme-english.html)
 
 [Download the mod at Spellhold Studios](http://www.shsforums.net/files/file/31-hubelpot-the-vegetable-merchant/)<br>
 
