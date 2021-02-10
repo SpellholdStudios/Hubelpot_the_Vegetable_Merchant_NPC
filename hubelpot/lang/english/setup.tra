@@ -131,7 +131,7 @@ While all staves are somewhat resistant to magic, they are not invulnerable, and
 
 Ecology of the Free Tonker:
 Once free from its master’s control, the average staff will seek a dry, cool nesting place, preferably near a source of magical energy. Behind the book-cases in a large magical library, the back of a dry closet containing a few magical robes, or the corner of a well equipped magical laboratory would all be ideal. Free staves often act as de-facto guards in the more well-established academies of magic; sometimes difficult to communicate with or control, these free staves are rarely dangerous unless aroused. Generally they will become quite protective of the students who practice magic daily in their presence, and can be trusted to defend them from intruders. However, roughhousing or teasing is very difficult for them to understand. The very best advice one can give to a young apprentice in such an academy is not to play with his Tonker.~
-/* DEPRECATED as of v1.1.0 = same as @1066
+/* DEPRECATED as of v2.0.0 = same as @1066
 @1067 = ~Sapient Staff
 Level: 1
 Range: Self

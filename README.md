@@ -1,6 +1,6 @@
 
-![Latest Release](https://img.shields.io/github/v/release/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?include_prereleases&color=darkred)<a name="top" id="top">
-![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?color=gold)
+![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?include_prereleases&color=darkred)<a name="top" id="top">
+![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?color=gold)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20German%20%7C%20Italian%20%7C%20Russian%20%7C%20Spanish&color=limegreen)
 
@@ -16,11 +16,11 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 **Mod Website:** <a href="http://www.spellholdstudios.net/ie/hubelpot">Spellhold Studios</a>  
 **Mod Forum:** <a href="http://www.shsforums.net/forum/156-hubelpot/">Hubelpot the Vegetable Merchant</a><br>
 
-[![Created Badge](https://badges.pufler.dev/created/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?style=plastic)](https://badges.pufler.dev)
-![GitHub repo size](https://img.shields.io/github/repo-size/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?style=plastic)
-[![Visits Badge](https://badges.pufler.dev/visits/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?color=cyan&style=plastic)](https://badges.pufler.dev) 
+[![Created Badge](https://badges.pufler.dev/created/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?style=plastic)](https://badges.pufler.dev)
+![GitHub repo size](https://img.shields.io/github/repo-size/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?style=plastic)
+[![Visits Badge](https://badges.pufler.dev/visits/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?color=cyan&style=plastic)](https://badges.pufler.dev) 
 ![Maintenance](https://img.shields.io/static/v1?label=maintained%3F&message=yes&color=greenlight&style=plastic)
-![GitHub contributors](https://img.shields.io/github/contributors/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?color=blueviolet&style=plastic) [![Contributors Display](https://badges.pufler.dev/contributors/GwendolyneFreddy/Hubelpot_the_Vegetable_Merchant_NPC?size=30&padding=5&bots=true)](https://badges.pufler.dev)
+![GitHub contributors](https://img.shields.io/github/contributors/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?color=blueviolet&style=plastic) [![Contributors Display](https://badges.pufler.dev/contributors/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?size=30&padding=5&bots=true)](https://badges.pufler.dev)
 
 ## 
 
@@ -242,7 +242,7 @@ The installer includes the following components. The number of each is the compo
 
 ## <a name="versions" id="versions"></a>Version History
 
-##### Version 1.1.0 &nbsp;(February , 2021)
+##### Version 2.0.0 &nbsp;(February 10, 2021)
 
 - Added *hubelpot.ini* metadata file (including Dynamic Install Syntax) to support AL|EN's "Project Infinity".
 - Renamed *Setup-Hubelpot.tp2* -> *hubelpot.tp2* and moved it into mod top folder to support AL|EN's "Project Infinity".

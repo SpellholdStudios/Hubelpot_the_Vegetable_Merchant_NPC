@@ -1,8 +1,9 @@
 
+- Check EET_Transtition function that does not find Imoen2 recall...
+
 - Create kits abilities bam files. The mod uses the items inventory bams and and it would be better to resize them to 28 x 28 pixels to fit the game standard.
 
 - I am pretty sure the following kits features are not implemented:
     - Village Druid: May cast one fewer spell per spell level than a standard Druid
 	- Vegetable Farmer: Can reduce prices in shopping from merchants, due to his supreme haggling-skills
-
-An extensive testing may check if I am right or wrong...
+==> An extensive testing may check if I am right or wrong...
