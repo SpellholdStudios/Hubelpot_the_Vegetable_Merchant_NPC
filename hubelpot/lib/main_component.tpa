@@ -67,90 +67,6 @@ ACTION_IF is_vegetable_farmer_kit BEGIN
 END
 
 
-/* -------------------------------------- *
- *  Installing SoA dialogues and scripts  *
- * -------------------------------------- */
-
-PRINT "Compiling dialogues and scripts..."
-SILENT
-
-// Compiling SoA dialogues...
-COMPILE ~hubelpot/dialogue/sc#hub.d~      USING ~hubelpot/lang/%s/sc#quest.tra~
-COMPILE ~hubelpot/dialogue/bsc#hub.d~
-COMPILE ~hubelpot/dialogue/sc#hubquest.d~ USING ~hubelpot/lang/%s/sc#quest.tra~
-
-// Compiling SoA scripts...
-COMPILE ~hubelpot/scripts/sc#hub.baf~
-COMPILE ~hubelpot/scripts/sc#hubx.baf~
-
-EXTEND_BOTTOM ~ar0406.bcs~ ~hubelpot/scripts/sc#ar0406.baf~
-EXTEND_BOTTOM ~ar0500.bcs~ ~hubelpot/scripts/sc#ar0500.baf~
-
-COPY_EXISTING ~ar0509.are~ ~override~
-	WRITE_ASCII 0x94 ~AR0509~
-BUT_ONLY
-EXTEND_BOTTOM ~ar0509.bcs~ ~hubelpot/scripts/sc#ar0509.baf~ USING ~hubelpot/lang/%s/sc#quest.tra~
-
-/* DEPRECATED as of v1.1.0: moved into demmag.cre file
-COPY_EXISTING ~ar0530.are~ ~override~
-	WRITE_ASCII 0x94 ~AR0530~
-BUT_ONLY
-EXTEND_BOTTOM ~ar0530.bcs~ ~hubelpot/scripts/sc#ar0530.baf~*/
-
-COPY_EXISTING ~ar0707.are~ ~override~
-	READ_ASCII 0x94 ar0707_script
-BUT_ONLY
-ACTION_IF NOT (~%ar0707_script%~ STR_EQ ~AR0707~) BEGIN
-	EXTEND_BOTTOM ~%ar0707_script%.bcs~ ~hubelpot/scripts/sc#ar0707.baf~
-END ELSE BEGIN
-	EXTEND_BOTTOM ~ar0707.bcs~ ~hubelpot/scripts/sc#ar0707.baf~
-END
-
-
-/* -------------------------------------- *
- *  Installing ToB dialogues and scripts  *
- * -------------------------------------- */
-
-// Compiling ToB dialogues...
-COMPILE ~hubelpot/dialogue/sc#hub25.d~
-COMPILE ~hubelpot/dialogue/bsc#hub25.d~
-
-// Compiling ToB scripts...
-COMPILE ~hubelpot/scripts/sc#hub25.baf~
-
-
-/* ------------- *
- *  Fate Spirit  *
- * ------------- */
-
-ACTION_IF is_eet BEGIN
-	INCLUDE ~EET/other/EET_functions.tph~
-	LAF ~EET_NPC_TRANSITION~
-		INT_VAR
-			type = 2                       // NPC is summon-able if met before
-			default_ToB = 1
-		STR_VAR
-			dv           = "Hubelpot"      // death variable of your NPC
-			override_SoA = "sc#hub25"      // override script of your NPC (SoA)
-			override_ToB = "sc#hub25"      // override script of your NPC (ToB)
-			dialog_ToB   = "sc#fatespirit" // joining dialogue for ToB
-			traFile      = EVAL "hubelpot/lang/%LANGUAGE%/sc#fatespirit.tra"
-			string       = "@0"
-			stringPosDV  = "Imoen2"
-	END
-END ELSE BEGIN
-	LAF ~GW_FIND_FATESP_IMOEN_TRANSITION~ RET fatesp_transition_imoen = GW_transition_number fatesp_state_imoen = GW_state_number END
-	COMPILE EVALUATE_BUFFER ~hubelpot/dialogue/sc#fatespirit.d~
-END
-
-
-/* ---------------------- *
- *  Journal entries (EE)  *
- * ---------------------- */
-
-ADD_JOURNAL @2001 @2002 @2003 @2004 @2005 @2006 USING ~hubelpot/lang/%s/sc#quest.tra~
-
-
 /* ---------------------- *
  *  Installing portraits  *
  * ---------------------- */
@@ -343,6 +259,94 @@ END ELSE BEGIN
 END
 
 
+/* -------------------------------------- *
+ *  Installing SoA dialogues and scripts  *
+ * -------------------------------------- */
+
+PRINT "Compiling dialogues and scripts..."
+SILENT
+
+// Compiling SoA dialogues...
+COMPILE ~hubelpot/dialogue/sc#hub.d~      USING ~hubelpot/lang/%s/sc#quest.tra~
+COMPILE ~hubelpot/dialogue/bsc#hub.d~
+COMPILE ~hubelpot/dialogue/sc#hubquest.d~ USING ~hubelpot/lang/%s/sc#quest.tra~
+
+// Compiling SoA scripts...
+COMPILE ~hubelpot/scripts/sc#hub.baf~
+COMPILE ~hubelpot/scripts/sc#hubx.baf~
+
+EXTEND_BOTTOM ~ar0406.bcs~ ~hubelpot/scripts/sc#ar0406.baf~
+EXTEND_BOTTOM ~ar0500.bcs~ ~hubelpot/scripts/sc#ar0500.baf~
+
+COPY_EXISTING ~ar0509.are~ ~override~
+	WRITE_ASCII 0x94 ~AR0509~
+BUT_ONLY
+EXTEND_BOTTOM ~ar0509.bcs~ ~hubelpot/scripts/sc#ar0509.baf~ USING ~hubelpot/lang/%s/sc#quest.tra~
+
+/* DEPRECATED as of v2.0.0: moved into demmag.cre file
+COPY_EXISTING ~ar0530.are~ ~override~
+	WRITE_ASCII 0x94 ~AR0530~
+BUT_ONLY
+EXTEND_BOTTOM ~ar0530.bcs~ ~hubelpot/scripts/sc#ar0530.baf~*/
+
+COPY_EXISTING ~ar0707.are~ ~override~
+	READ_ASCII 0x94 ar0707_script
+BUT_ONLY
+ACTION_IF NOT (~%ar0707_script%~ STR_EQ ~AR0707~) BEGIN
+	EXTEND_BOTTOM ~%ar0707_script%.bcs~ ~hubelpot/scripts/sc#ar0707.baf~
+END ELSE BEGIN
+	EXTEND_BOTTOM ~ar0707.bcs~ ~hubelpot/scripts/sc#ar0707.baf~
+END
+
+
+/* -------------------------------------- *
+ *  Installing ToB dialogues and scripts  *
+ * -------------------------------------- */
+
+// Compiling ToB dialogues...
+COMPILE ~hubelpot/dialogue/sc#hub25.d~
+COMPILE ~hubelpot/dialogue/bsc#hub25.d~
+
+// Compiling ToB scripts...
+COMPILE ~hubelpot/scripts/sc#hub25.baf~
+
+
+/* ------------- *
+ *  Fate Spirit  *
+ * ------------- */
+
+LAF ~GW_FIND_FATESP_IMOEN_TRANSITION~ RET fatesp_transition_imoen = GW_transition_number fatesp_state_imoen = GW_state_number END
+COMPILE EVALUATE_BUFFER ~hubelpot/dialogue/sc#fatespirit.d~
+
+ACTION_IF is_eet BEGIN
+	INCLUDE ~EET/other/EET_functions.tph~
+	LAF ~EET_NPC_TRANSITION~
+		INT_VAR
+			type = 2                       // NPC is summon-able if met before
+			default_ToB = 1
+		STR_VAR
+			dv           = "Hubelpot"      // death variable of your NPC
+			override_SoA = "sc#hub"        // override script of your NPC (SoA)
+			override_ToB = "sc#hub25"      // override script of your NPC (ToB)
+			cre_ToB      = "sc#hub25"
+			dialog_ToB   = "sc#hub25"     // joining dialogue for ToB
+			traFile      = EVAL "hubelpot/lang/%LANGUAGE%/sc#fatespirit.tra"
+			string       = "@0"
+			stringPosDV  = "Imoen2"
+	END
+/*END ELSE BEGIN
+	LAF ~GW_FIND_FATESP_IMOEN_TRANSITION~ RET fatesp_transition_imoen = GW_transition_number fatesp_state_imoen = GW_state_number END
+	COMPILE EVALUATE_BUFFER ~hubelpot/dialogue/sc#fatespirit.d~*/
+END
+
+
+/* ---------------------- *
+ *  Journal entries (EE)  *
+ * ---------------------- */
+
+ADD_JOURNAL @2001 @2002 @2003 @2004 @2005 @2006 USING ~hubelpot/lang/%s/sc#quest.tra~
+
+
 /* ----------------- *
  *  Appending files  *
  * ----------------- */
@@ -370,27 +374,29 @@ COPY ~hubelpot/epilogues/sc#hubbio.2da~ ~override~
 	REPLACE ~99999~ @1050
 
 
-// Modification du dialogue 11 : Ajout de la variable ajustant la remise dans le magasin (pas de remise par défaut).
-// -----------------------------
+/* ------------------------------------------------------- *
+ *  Patching Fate Spirit dialog with optional kits strref  *
+ * ------------------------------------------------------- */
 
 ACTION_IF is_village_druid_kit OR is_vegetable_farmer_kit BEGIN
 
 	WITH_TRA ~%MOD_FOLDER%/lang/%s/sc#fatespirit.tra~ BEGIN
 	// #32661 = ~Oui, s'il vous plaît. Montrez-moi donc ce que vous avez en magasin.~
-	COPY_EXISTING - ~FATESP.dlg~ ~override~
-		PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN  // protects against invalid files
+		COPY_EXISTING - ~FATESP.dlg~ ~override~
+			PATCH_IF (SOURCE_SIZE > 0x2f) BEGIN  // protects against invalid files
 
-			LPF ~GW_FIND_DLG_RESPONSE_STRING~ STR_VAR GW_string_dlg = "@0" RET GW_transition_found GW_state_number GW_transition_number END
-			PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
-				SET FATESP_Transition_hub = GW_transition_number
-				SET FATESP_State_hub = GW_state_number
-//				SET FATESP_Transition_hubB = GW_transition_number + 1
-//					PATCH_PRINT "CONTROL FATESP.dlg : %SOURCE_RES%.dlg  -  Transition found = %GW_transition_found%  -  state = #%GW_state_number%  -  transition = #%GW_transition_number%."
-			END
+				LPF ~GW_FIND_DLG_RESPONSE_STRING~ STR_VAR GW_string_dlg = "@0" RET GW_transition_found GW_state_number GW_transition_number END
+				PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+					SET FATESP_Transition_hub = GW_transition_number
+					SET FATESP_State_hub = GW_state_number
+//					SET FATESP_Transition_hubB = GW_transition_number + 1
+//						PATCH_PRINT "CONTROL FATESP.dlg : %SOURCE_RES%.dlg  -  Transition found = %GW_transition_found%  -  state = #%GW_state_number%  -  transition = #%GW_transition_number%."
+				END
 
-		END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
-	BUT_ONLY
-END
+			END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
+		BUT_ONLY
+	END
+
 END ELSE BEGIN
 
 	OUTER_SET FATESP_State_hub = (0 - 1)
