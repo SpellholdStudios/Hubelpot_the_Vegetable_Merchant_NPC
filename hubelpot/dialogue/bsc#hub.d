@@ -127,7 +127,7 @@ EXIT
 CHAIN IF ~InParty("Minsc")
 See("Minsc")
 !StateCheck("Minsc",STATE_SLEEPING)
-Global("SC#HubMin","GLOBAL",0)~ THEN BSC#Hub min1
+Global("SC#HubMin","GLOBAL",0)~ THEN BSC#Hub sc#minhub1
 @66 DO ~SetGlobal("SC#HubMin","GLOBAL",1)~
 == BMINSC @67
 == BSC#Hub @68
@@ -464,11 +464,11 @@ Global("SC#HubJah","LOCALS",0)~ THEN BJAHEIR jah1
 == BJAHEIR @273
 EXIT
 
-CHAIN IF WEIGHT #12
+CHAIN IF
 ~InParty("Hubelpot")
 See("Hubelpot")
 !StateCheck("Hubelpot",STATE_SLEEPING)
-Global("SC#HubMin","GLOBAL",1)~ THEN BMINSC min2
+Global("SC#HubMin","GLOBAL",1)~ THEN BMINSC sc#minhub2
 @274 DO ~SetGlobal("SC#HubMin","GLOBAL",2)~
 == BSC#Hub @275
 == BMINSC @276
@@ -587,3 +587,70 @@ Global("SC#HubJan","LOCALS",3)~ THEN BJAN jan4
 == BSC#Hub @361
 EXIT
 
+CHAIN IF ~CombatCounter(0)
+!See([ENEMY])
+!StateCheck("Hubelpot",CD_STATE_NOTVALID)
+!StateCheck("Minsc",CD_STATE_NOTVALID)
+InMyArea("Minsc")
+InParty("Minsc")
+Global("SC#HubMin","GLOBAL",2)~
+THEN BSC#HUB sc#minhub3
+@362
+== BMINSC @363
+== BSC#HUB @364 DO ~SetGlobal("SC#HubMin","GLOBAL",3)~
+== BSC#HUB @365
+== BSC#HUB IF ~NumInParty(6)~ THEN @366
+== BSC#HUB IF ~NumInParty(5)~ THEN @372
+== BSC#HUB IF ~NumInParty(4)~ THEN @373
+== BSC#HUB IF ~NumInParty(3)~ THEN @374
+== BSC#HUB IF ~NumInParty(2)~ THEN @375
+== BSC#HUB @367
+== BSC#HUB @368
+== BSC#HUB @365
+== BSC#HUB IF ~NumInParty(6)~ THEN @366
+== BSC#HUB IF ~NumInParty(5)~ THEN @372
+== BSC#HUB IF ~NumInParty(4)~ THEN @373
+== BSC#HUB IF ~NumInParty(3)~ THEN @374
+== BSC#HUB IF ~NumInParty(2)~ THEN @375
+== BSC#HUB @369
+END
+IF ~!InParty("Jaheira") !InParty("Anomen") !InParty("Jan")~ THEN EXTERN BSC#HUB sc#count7
+IF ~InParty("Jaheira") !InParty("Anomen") !InParty("Jan")~ THEN EXTERN BSC#HUB sc#count6
+IF ~InParty("Jaheira") !InParty("Anomen") InParty("Jan")~ THEN EXTERN BSC#HUB sc#count5
+IF ~!InParty("Jaheira") InParty("Anomen") !InParty("Jan")~ THEN EXTERN BSC#HUB sc#count4
+IF ~!InParty("Jaheira") InParty("Anomen") InParty("Jan")~ THEN EXTERN BSC#HUB sc#count3
+IF ~InParty("Jaheira") InParty("Anomen") !InParty("Jan")~ THEN EXTERN BSC#HUB sc#count2
+IF ~InParty("Jaheira") InParty("Anomen") InParty("Jan")~ THEN EXTERN BSC#HUB sc#count1
+
+CHAIN BSC#HUB sc#count1
+@370
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#count2
+@376
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#count3
+@377
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#count4
+@378
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#count5
+@379
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#count6
+@380
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#count7
+@381
+EXTERN BSC#HUB sc#countfinale
+
+CHAIN BSC#HUB sc#countfinale
+@369
+== BMINSC @371 // Boo's squeak
+EXIT

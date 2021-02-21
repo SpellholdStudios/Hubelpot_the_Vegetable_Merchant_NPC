@@ -358,7 +358,7 @@ APPEND ~pdialog.2da~ ~Hubelpot sc#hubp sc#hubj sc#hubd~ UNLESS ~Hubelpot~ UNLESS
 APPEND ~pdialog.2da~ ~Hubelpot sc#hubp sc#hubj sc#hubd sc#hb25p sc#hb25j sc#hb25d sc#hub25~ UNLESS ~Hubelpot~ IF ~25POST~
 
 APPEND ~interdia.2da~ ~Hubelpot bsc#hub~ UNLESS ~Hubelpot~ UNLESS ~25FILE~
-APPEND ~interdia.2da~ ~Hubelpot bsc#hub bsc#hb25~ UNLESS ~Hubelpot~ IF ~25FILE~
+APPEND ~interdia.2da~ ~Hubelpot bsc#hub bsc#hu25~ UNLESS ~Hubelpot~ IF ~25FILE~
 
 
 /* ----------- *

@@ -195,8 +195,10 @@ The installer includes the following components. The number of each is the compo
 - Voice Actors: NotMrT.
 - Bug Hunting: SConrad, BobTokyo, NotMrT, Shed.
 - Special Thanks to Terry Pratchett, a god among authors, and Heather Wood, multi-talented folk songstress, for inspiration. For several versions of The Hedgehog Song and much more, please go <a href="http://www.ie.lspace.org/">here</a>.
-- Gwendolyne and Austin for updating the mod to v1.1.0.
-- a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">Hupelpot alternate portrait</a>: Enkida.
+- <a href="http://www.shsforums.net/topic/55298-hubelpot-20-beta-sample-banters/">Bookwyrme</a> for writing Minsc, Nalia and Sarevok.
+- Austin for Russian translation.
+- Gwendolyne and Austin for updating the mod to v2.0.0.
+- <a href="https://www.deviantart.com/enkida/art/BG2-NPC-Hubelpot-283673389">Hupelpot alternate portrait</a>: Enkida.
 - The team leaders also wish to credit everyone not mentioned who've contributed with ideas, suggestions, help, response and encouragement. This has meant a lot to us. Hubelpot wouldn't exist if it weren't for you. Thank you!.
 - Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
 - Deprecated links: <a href="http://forums.forgottenwars.net/index.php?showforum=156">Hubelpot's own forum</a> at <a href="http://forums.forgottenwars.net">Forgotten Wars forums</a> and <a href="http://sol-ek-sa.forgottenwars.net">Sol Ek</a> at <a href="http://forums.forgottenwars.net/index.php?showforum=147">FW</a>.
@@ -241,6 +243,15 @@ The installer includes the following components. The number of each is the compo
 
 
 ## <a name="versions" id="versions"></a>Version History
+
+##### Version 2.1.0 &nbsp;(February 21, 2021)
+
+- Fixed a typo in `HANDLE_CHARSETS` arrays.
+- Added Minsc, Nalia and Sarevok banters written by <a href="http://www.shsforums.net/topic/55298-hubelpot-20-beta-sample-banters/">Bookwyrme</a>, but never included into the mod.
+- *sc#hubquest.d*: fixed a bug preventing Fanny Adams to initiate dialog and preventing from completing Hubelpot's quest.
+- Added Russian translation (by Austin).
+
+## 
 
 ##### Version 2.0.0 &nbsp;(February 10, 2021)
 
