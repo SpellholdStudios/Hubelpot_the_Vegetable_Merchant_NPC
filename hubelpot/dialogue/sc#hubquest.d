@@ -169,6 +169,14 @@ DO ~SetGlobal("SC#HubPlot","GLOBAL",3) TakePartyGold(25) AddexperienceParty(1500
 EXIT
 END
 
+
+IF ~NumTimesTalkedToGT(0)~ Fan_Again
+SAY @39
+++ @40 + Fan_2
+++ @41 + Fan_2
+++ @42 + Fan_3
+END
+
 END
 
 APPEND INSPECT
