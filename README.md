@@ -1,3 +1,8 @@
+<hr>
+
+:warning: **The maintenance and support of this project has been moved to a [new repository](https://github.com/Spellhold-Studios/Hubelpot-NPC).**
+
+<hr><br>
 
 ![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?include_prereleases&color=darkred)<a name="top" id="top">
 ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/SpellholdStudios/Hubelpot_the_Vegetable_Merchant_NPC?color=gold)
@@ -38,9 +43,9 @@ Baldur's Gate Trilogy, BG2:EE and EET<h3>
 
 ## <a name="intro" id="intro"></a>Overview
 
-<img style="float: left;" src="hubelpot/readme/images/sc_hubm.jpg"> This mod adds the Vegetable Merchant Hubelpot Thistledown to the game. He is a joinable druid-NPC. You can find him in Enge's fruit and vegetable shop in Waukeen's Promenade (he’s leasing the space).<br>
+<img style="float: left;" src="hubelpot/readme/images/sc_hubm.jpg"> This mod adds the Vegetable Merchant Hubelpot Thistledown to the game. He is a joinable druid-NPC. You can find him in Enge's fruit and vegetable shop in Waukeen's Promenade (heâ€™s leasing the space).<br>
 Hubelpot is by default a Totemic Druid. The village wise man who can call spirits to aid his people is well established in folkloric tradition, and fits Hubelpot well enough. He also has two kit options: the Village Druid for those who want something a bit different, and the Vegetable Farmer for those who want a powerful kit with high comic relief value. Both of the new kits are NPC only, and both are fairly well-balanced compared to other BG2 kits.<br>
-Hubelpot features around 30 banters, none of them breaking the 4th wall, and none of them featuring the word "turnip". He interacts with every Bioware NPC except Sarevok. In ToB he’s still fairly quiet, only speaking up when called, with Volo and at the end of ToB; he does have an epilogue. If there is an expansion, more ToB dialog will be added.<br>
+Hubelpot features around 30 banters, none of them breaking the 4th wall, and none of them featuring the word "turnip". He interacts with every Bioware NPC except Sarevok. In ToB heâ€™s still fairly quiet, only speaking up when called, with Volo and at the end of ToB; he does have an epilogue. If there is an expansion, more ToB dialog will be added.<br>
 From a play value point of view, Hubelpot adds one quest with an unusual reward. As a single class druid with a unique item and a few kit options, he starts off able to survive and contribute and will be roughly as powerful as most of the Bioware NPCs by the end of the game.<br><br>
 
 <details><summary><ins>Original note from the authors</ins></summary>
